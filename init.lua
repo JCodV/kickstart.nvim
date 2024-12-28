@@ -270,6 +270,9 @@ require('lazy').setup({
   { 'vague2k/vague.nvim', name = 'vague', priority = 1000 },
   { 'projekt0n/github-nvim-theme', name = 'github', priority = 1000 },
   { 'askfiy/visual_studio_code', name = 'vscode', priority = 1000 },
+  { 'ramojus/mellifluous.nvim', name = 'mellifluous', priority = 1000 },
+  { 'frenzyexists/aquarium-vim', name = 'aquarium', priority = 1000 },
+
   ----------------------------------------------------------------
   ----------------------- CUSTOM PLUGINS -------------------------
   ----------------------------------------------------------------
