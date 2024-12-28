@@ -272,6 +272,17 @@ require('lazy').setup({
   { 'askfiy/visual_studio_code', name = 'vscode', priority = 1000 },
   { 'ramojus/mellifluous.nvim', name = 'mellifluous', priority = 1000 },
   { 'frenzyexists/aquarium-vim', name = 'aquarium', priority = 1000 },
+  { 'fenetikm/falcon', name = 'falcon', priority = 1000 },
+  { 'AlexvZyl/nordic.nvim', name = 'nordic', priority = 1000 },
+  { 'kvrohit/substrata.nvim', name = 'substrata', priority = 1000 },
+  { 'slugbyte/lackluster.nvim', name = 'lackluster', priority = 1000 },
+  { 'ayu-theme/ayu-vim', name = 'ayu', priority = 1000 },
+  { 'srcery-colors/srcery-vim', name = 'srcery', priority = 1000 },
+  { 'aktersnurra/no-clown-fiesta.nvim', name = 'no-clown-fiesta', priority = 1000 },
+  { 'Abstract-IDE/Abstract-cs', name = 'Abstract-cs', priority = 1000 },
+  { 'ldelossa/vimdark', name = 'vimdark', priority = 1000 },
+  { 'water-sucks/darkrose.nvim', name = 'darkrose', priority = 1000 },
+  { 'namrabtw/rusty.nvim', name = 'rusty', priority = 1000 },
 
   ----------------------------------------------------------------
   ----------------------- CUSTOM PLUGINS -------------------------
@@ -914,7 +925,7 @@ require('lazy').setup({
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 
       -- CHOOSE STARTUP / PERMANENT THEME HERE --
-      vim.cmd.colorscheme 'visual_studio_code'
+      vim.cmd.colorscheme 'ayu'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
