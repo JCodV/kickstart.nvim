@@ -275,35 +275,32 @@ require('lazy').setup({
   { 'fenetikm/falcon', name = 'falcon', priority = 1000 },
   { 'AlexvZyl/nordic.nvim', name = 'nordic', priority = 1000 },
   { 'kvrohit/substrata.nvim', name = 'substrata', priority = 1000 },
-  { 'slugbyte/lackluster.nvim', name = 'lackluster', priority = 1000 },
   { 'ayu-theme/ayu-vim', name = 'ayu', priority = 1000 },
   { 'srcery-colors/srcery-vim', name = 'srcery', priority = 1000 },
   { 'aktersnurra/no-clown-fiesta.nvim', name = 'no-clown-fiesta', priority = 1000 },
-  { 'Abstract-IDE/Abstract-cs', name = 'Abstract-cs', priority = 1000 },
   { 'ldelossa/vimdark', name = 'vimdark', priority = 1000 },
   { 'water-sucks/darkrose.nvim', name = 'darkrose', priority = 1000 },
   { 'namrabtw/rusty.nvim', name = 'rusty', priority = 1000 },
+  { 'sts10/vim-pink-moon', priority = 1000 },
 
-  ----------------------------------------------------------------
-  ----------------------- CUSTOM PLUGINS -------------------------
-  ----------------------------------------------------------------
-
-  {
-    'stevearc/oil.nvim',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {
-      default_file_explorer = true,
-      view_options = {
-        show_hidden = true,
-      }
+    ----------------------------------------------------------------
+    ----------------------- CUSTOM PLUGINS -------------------------
+    ----------------------------------------------------------------
+    {
+      'stevearc/oil.nvim',
+      ---@module 'oil'
+      ---@type oil.SetupOpts
+      opts = {
+        default_file_explorer = true,
+        view_options = {
+          show_hidden = true,
+        },
+      },
+      -- Optional dependencies
+      dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
     },
-    -- Optional dependencies
-    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-    vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
-
-  },
 
   {
     'windwp/nvim-autopairs',
