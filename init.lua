@@ -282,25 +282,32 @@ require('lazy').setup({
   { 'water-sucks/darkrose.nvim', name = 'darkrose', priority = 1000 },
   { 'namrabtw/rusty.nvim', name = 'rusty', priority = 1000 },
   { 'sts10/vim-pink-moon', priority = 1000 },
+  { 'p00f/alabaster.nvim', priority = 1000 },
+  { 'gmr458/cold.nvim', priority = 1000 },
+  { 'ficcdaf/ashen.nvim', priority = 1000 },
+  { 'HoNamDuong/hybrid.nvim', priority = 1000 },
+  { 'fcancelinha/northern.nvim', priority = 1000 },
+  { 'AlexvZyl/nordic.nvim', priority = 1000 },
+  { 'Mofiqul/vscode.nvim', priority = 1000 },
 
-    ----------------------------------------------------------------
-    ----------------------- CUSTOM PLUGINS -------------------------
-    ----------------------------------------------------------------
-    {
-      'stevearc/oil.nvim',
-      ---@module 'oil'
-      ---@type oil.SetupOpts
-      opts = {
-        default_file_explorer = true,
-        view_options = {
-          show_hidden = true,
-        },
+  ----------------------------------------------------------------
+  ----------------------- CUSTOM PLUGINS -------------------------
+  ----------------------------------------------------------------
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {
+      default_file_explorer = true,
+      view_options = {
+        show_hidden = true,
       },
-      -- Optional dependencies
-      dependencies = { { 'echasnovski/mini.icons', opts = {} } },
-      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
     },
+    -- Optional dependencies
+    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
+  },
 
   {
     'windwp/nvim-autopairs',
@@ -926,7 +933,7 @@ require('lazy').setup({
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 
       -- CHOOSE STARTUP / PERMANENT THEME HERE --
-      vim.cmd.colorscheme 'ayu'
+      vim.cmd.colorscheme 'nordic'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
