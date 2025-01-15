@@ -289,7 +289,8 @@ require('lazy').setup({
   { 'fcancelinha/northern.nvim', priority = 1000 },
   { 'AlexvZyl/nordic.nvim', priority = 1000 },
   { 'Mofiqul/vscode.nvim', priority = 1000 },
-
+  { 'navarasu/onedark.nvim', priority = 1000 },
+  { 'Yazeed1s/minimal.nvim', name = 'minimal', priority = 1000 },
   ----------------------------------------------------------------
   ----------------------- CUSTOM PLUGINS -------------------------
   ----------------------------------------------------------------
@@ -933,7 +934,7 @@ require('lazy').setup({
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 
       -- CHOOSE STARTUP / PERMANENT THEME HERE --
-      vim.cmd.colorscheme 'nordic'
+      vim.cmd.colorscheme 'minimal'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
