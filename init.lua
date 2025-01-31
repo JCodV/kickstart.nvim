@@ -258,6 +258,7 @@ require('lazy').setup({
   -- keys can be used to configure plugin behavior/loading/etc.
   --
   -- Use `opts = {}` to force a plugin to be loaded.
+
   ----------------------------------------------------------------
   ----------------------- CUSTOM THEMES --------------------------
   ----------------------------------------------------------------
@@ -291,8 +292,76 @@ require('lazy').setup({
   { 'Mofiqul/vscode.nvim', priority = 1000 },
   { 'navarasu/onedark.nvim', priority = 1000 },
   { 'Yazeed1s/minimal.nvim', name = 'minimal', priority = 1000 },
+  { 'Everblush/nvim', priority = 1000 },
+  {
+    'sainnhe/sonokai',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      -- vim.g.sonokai_enable_italic = true
+    end,
+  },
+  { 'glepnir/zephyr-nvim', priority = 1000 },
+  { 'tjdevries/colorbuddy.vim', priority = 1000 },
+  { 'savq/melange-nvim', priority = 1000 },
+  { 'NTBBloodbath/doom-one.nvim', priority = 1000 },
+  { 'nxvu699134/vn-night.nvim', priority = 1000 },
+  { 'kaiuri/nvim-juliana', priority = 1000 },
+  { 'lewpoly/sherbet.nvim', priority = 1000 },
+  { 'Mofiqul/adwaita.nvim', priority = 1000 },
+  { 'mellow-theme/mellow.nvim', priority = 1000 },
+  { 'dasupradyumna/midnight.nvim', priority = 1000 },
+  {
+    'sainnhe/gruvbox-material',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = true
+      vim.cmd.colorscheme 'gruvbox-material'
+    end,
+  },
+  {
+    'ilof2/posterpole.nvim',
+    priority = 1000,
+    config = function()
+      require('posterpole').setup {
+        -- config here
+      }
+      vim.cmd 'colorscheme posterpole'
+
+      -- if you need colorscheme without termguicolors support
+      -- This variant set termguicolors to false, be aware of using it
+      -- vim.cmd("colorscheme posterpole-term")
+    end,
+  },
+  { 'embark-theme/vim', priority = 1000 },
+  { 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
+  { 'miikanissi/modus-themes.nvim', priority = 1000 },
+  {
+    'dgox16/oldworld.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  { 'sonph/onehalf', priority = 1000 },
+  { 'atelierbram/Base4Tone-nvim', priority = 1000 },
+  { 'datsfilipe/vesper.nvim', priority = 1000 },
+  {
+    'wtfox/jellybeans.nvim',
+    priority = 1000,
+    config = function()
+      require('jellybeans').setup {
+        italics = false,
+      }
+      vim.cmd.colorscheme 'jellybeans'
+    end,
+  },
+
   ----------------------------------------------------------------
-  ----------------------- CUSTOM PLUGINS -------------------------
+  --CUSTOM PLUGINS------------------------------------------------
   ----------------------------------------------------------------
   {
     'stevearc/oil.nvim',
@@ -319,8 +388,9 @@ require('lazy').setup({
   },
 
   ----------------------------------------------------------------
-  ----------------------- PRE-INSTALLED PLUGINS ------------------
+  --PRE-INSTALLED PLUGINS ----------------------------------------
   ----------------------------------------------------------------
+
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
@@ -762,6 +832,31 @@ require('lazy').setup({
     end,
   },
 
+  -- Setup for mason-lspconfig
+  -- require('mason-lspconfig').setup {
+  --   -- Add any specific handlers or custom logic
+  --   handlers = {
+  --     function(server_name)
+  --       local server = servers[server_name] or {}
+  --       -- Overriding server configuration as needed
+  --       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+  --
+  --       -- Add manual configuration for zls
+  --       if server_name == "zls" then
+  --         -- Customize the configuration if needed
+  --         require('lspconfig')[server_name].setup({
+  --           cmd = { "zls/src/zls.zig" }, -- Specify the correct path if needed
+  --           filetypes = { "zig" },    -- Set filetypes for zig
+  --           root_dir = require('lspconfig').util.root_pattern('build.zig', '.git'),
+  --         })
+  --       else
+  --         -- Use the default handler for other servers
+  --         require('lspconfig')[server_name].setup(server)
+  --       end
+  --     end,
+  --   },
+  -- }
+
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
@@ -933,9 +1028,6 @@ require('lazy').setup({
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 
-      -- CHOOSE STARTUP / PERMANENT THEME HERE --
-      vim.cmd.colorscheme 'vscode'
-
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
@@ -992,6 +1084,7 @@ require('lazy').setup({
       auto_install = true,
       highlight = {
         enable = true,
+        disable = { 'zig' },
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
