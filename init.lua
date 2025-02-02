@@ -320,8 +320,8 @@ require('lazy').setup({
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
-      vim.cmd.colorscheme 'gruvbox-material'
+      -- vim.g.gruvbox_material_enable_italic = true
+      -- vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -331,7 +331,7 @@ require('lazy').setup({
       require('posterpole').setup {
         -- config here
       }
-      vim.cmd 'colorscheme posterpole'
+      -- vim.cmd 'colorscheme posterpole'
 
       -- if you need colorscheme without termguicolors support
       -- This variant set termguicolors to false, be aware of using it
@@ -348,7 +348,13 @@ require('lazy').setup({
   },
   { 'sonph/onehalf', priority = 1000 },
   { 'atelierbram/Base4Tone-nvim', priority = 1000 },
-  { 'datsfilipe/vesper.nvim', priority = 1000 },
+  {
+    'datsfilipe/vesper.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'vesper'
+    end,
+  },
   {
     'wtfox/jellybeans.nvim',
     priority = 1000,
@@ -356,7 +362,7 @@ require('lazy').setup({
       require('jellybeans').setup {
         italics = false,
       }
-      vim.cmd.colorscheme 'jellybeans'
+      -- vim.cmd.colorscheme 'jellybeans'
     end,
   },
 
