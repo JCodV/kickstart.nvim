@@ -262,27 +262,48 @@ require('lazy').setup({
   ----------------------------------------------------------------
   ----------------------- CUSTOM THEMES --------------------------
   ----------------------------------------------------------------
-  { 'ellisonleao/gruvbox.nvim', name = 'gruvbox', priority = 1000, config = true, opts = ... },
-  { 'rebelot/kanagawa.nvim', name = 'kanagawa', priority = 1000, config = true, opts = ... },
-  { 'navarasu/onedark.nvim', name = 'onedark', priority = 1000, config = true, opts = ... },
-  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
-  { 'neanias/everforest-nvim', name = 'everforest', priority = 1000 },
-  { 'EdenEast/nightfox.nvim', name = 'nightfox', priority = 1000 },
-  { 'vague2k/vague.nvim', name = 'vague', priority = 1000 },
-  { 'projekt0n/github-nvim-theme', name = 'github', priority = 1000 },
-  { 'askfiy/visual_studio_code', name = 'vscode', priority = 1000 },
-  { 'ramojus/mellifluous.nvim', name = 'mellifluous', priority = 1000 },
-  { 'frenzyexists/aquarium-vim', name = 'aquarium', priority = 1000 },
-  { 'fenetikm/falcon', name = 'falcon', priority = 1000 },
-  { 'AlexvZyl/nordic.nvim', name = 'nordic', priority = 1000 },
-  { 'kvrohit/substrata.nvim', name = 'substrata', priority = 1000 },
-  { 'ayu-theme/ayu-vim', name = 'ayu', priority = 1000 },
-  { 'srcery-colors/srcery-vim', name = 'srcery', priority = 1000 },
-  { 'aktersnurra/no-clown-fiesta.nvim', name = 'no-clown-fiesta', priority = 1000 },
-  { 'ldelossa/vimdark', name = 'vimdark', priority = 1000 },
-  { 'water-sucks/darkrose.nvim', name = 'darkrose', priority = 1000 },
-  { 'namrabtw/rusty.nvim', name = 'rusty', priority = 1000 },
-  { 'sts10/vim-pink-moon', priority = 1000 },
+  { 'ellisonleao/gruvbox.nvim', priority = 1000 },
+  { 'rebelot/kanagawa.nvim', priority = 1000 },
+  { 'navarasu/onedark.nvim', priority = 1000 },
+  { 'catppuccin/nvim', priority = 1000 },
+  { 'neanias/everforest-nvim', priority = 1000 },
+  { 'EdenEast/nightfox.nvim', priority = 1000 },
+  { 'vague2k/vague.nvim', priority = 1000 },
+  { 'projekt0n/github-nvim-theme', priority = 1000 },
+  { 'askfiy/visual_studio_code', priority = 1000 },
+  { 'ramojus/mellifluous.nvim', priority = 1000 },
+  { 'frenzyexists/aquarium-vim', priority = 1000 },
+  {
+    'fenetikm/falcon',
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'falcon'
+      vim.g.falcon_background = 0
+      vim.g.falcon_inactive = 1
+    end,
+  },
+  { 'AlexvZyl/nordic.nvim', priority = 1000 },
+  { 'kvrohit/substrata.nvim', priority = 1000 },
+  { 'ayu-theme/ayu-vim', priority = 1000 },
+  { 'srcery-colors/srcery-vim', priority = 1000 },
+  {
+    'aktersnurra/no-clown-fiesta.nvim',
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'no-clown-fiesta'
+    end,
+  },
+  {
+    'ldelossa/vimdark',
+    name = 'vimdark',
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'vimdark'
+    end,
+  },
+  { 'water-sucks/darkrose.nvim', priority = 1000 },
+  { 'namrabtw/rusty.nvim', priority = 1000 },
+  -- { 'sts10/vim-pink-moon', priority = 1000 },
   { 'p00f/alabaster.nvim', priority = 1000 },
   { 'gmr458/cold.nvim', priority = 1000 },
   { 'ficcdaf/ashen.nvim', priority = 1000 },
@@ -291,7 +312,7 @@ require('lazy').setup({
   { 'AlexvZyl/nordic.nvim', priority = 1000 },
   { 'Mofiqul/vscode.nvim', priority = 1000 },
   { 'navarasu/onedark.nvim', priority = 1000 },
-  { 'Yazeed1s/minimal.nvim', name = 'minimal', priority = 1000 },
+  { 'Yazeed1s/minimal.nvim', priority = 1000 },
   { 'Everblush/nvim', priority = 1000 },
   {
     'sainnhe/sonokai',
@@ -309,7 +330,7 @@ require('lazy').setup({
   { 'NTBBloodbath/doom-one.nvim', priority = 1000 },
   { 'nxvu699134/vn-night.nvim', priority = 1000 },
   { 'kaiuri/nvim-juliana', priority = 1000 },
-  { 'lewpoly/sherbet.nvim', priority = 1000 },
+  -- { 'lewpoly/sherbet.nvim', priority = 1000 },
   { 'Mofiqul/adwaita.nvim', priority = 1000 },
   { 'mellow-theme/mellow.nvim', priority = 1000 },
   { 'dasupradyumna/midnight.nvim', priority = 1000 },
@@ -324,47 +345,85 @@ require('lazy').setup({
       -- vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
-  {
-    'ilof2/posterpole.nvim',
-    priority = 1000,
-    config = function()
-      require('posterpole').setup {
-        -- config here
-      }
-      -- vim.cmd 'colorscheme posterpole'
-
-      -- if you need colorscheme without termguicolors support
-      -- This variant set termguicolors to false, be aware of using it
-      -- vim.cmd("colorscheme posterpole-term")
-    end,
-  },
+  -- {
+  --   'ilof2/posterpole.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     require('posterpole').setup {
+  --       -- config here
+  --     }
+  --     -- vim.cmd 'colorscheme posterpole'
+  --
+  --     -- if you need colorscheme without termguicolors support
+  --     -- This variant set termguicolors to false, be aware of using it
+  --     -- vim.cmd("colorscheme posterpole-term")
+  --   end,
+  -- },
   { 'embark-theme/vim', priority = 1000 },
-  { 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
+  { 'bluz71/vim-moonfly-colors', priority = 1000 },
   { 'miikanissi/modus-themes.nvim', priority = 1000 },
   {
     'dgox16/oldworld.nvim',
     lazy = false,
     priority = 1000,
   },
-  { 'sonph/onehalf', priority = 1000 },
-  { 'atelierbram/Base4Tone-nvim', priority = 1000 },
+  -- { 'sonph/onehalf', priority = 1000 },
+  -- -- {
+  -- --   'atelierbram/Base4Tone-nvim',
+  -- --   priority = 1000,
+  -- -- },
   {
     'datsfilipe/vesper.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'vesper'
+      -- vim.cmd.colorscheme 'vesper'
     end,
   },
   {
     'wtfox/jellybeans.nvim',
     priority = 1000,
+    -- config = function()
+    --   -- require('jellybeans').setup {
+    --   --   italics = false,
+    --   -- }
+    --   -- vim.cmd.colorscheme 'jellybeans'
+    -- end,
+  },
+  { 'xStormyy/bearded-theme.nvim', priority = 1000 },
+  { 'k4yt3x/ayu-vim-darker', priority = 1000 },
+  {
+    'uloco/bluloco.nvim',
+    lazy = false,
+    priority = 1000,
+    dependencies = { 'rktjmp/lush.nvim' },
     config = function()
-      require('jellybeans').setup {
-        italics = false,
-      }
-      -- vim.cmd.colorscheme 'jellybeans'
+      -- your optional config goes here, see below.
     end,
   },
+  { 'effkay/argonaut.vim' },
+  { 'illegalLeft/honeywell.vim' },
+  {
+    'deparr/tairiki.nvim',
+    lazy = false,
+    priority = 1000, -- only necessary if you use tairiki as default theme
+    config = function()
+      require('tairiki').setup {
+        -- optional configuration here
+      }
+      vim.cmd.colorscheme 'tairiki'
+    end,
+  },
+  { 'jacoborus/tender.vim' },
+  { 'Skardyy/makurai-nvim' },
+
+  --  BUG: something to do with t_co
+  -- {
+  --   'Th3Whit3Wolf/one-nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'one-nvim'
+  --   end,
+  -- },
 
   ----------------------------------------------------------------
   --CUSTOM PLUGINS------------------------------------------------
@@ -781,7 +840,8 @@ require('lazy').setup({
         clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {},
+        -- rust_analyzer = {},
+        ts_ls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -824,20 +884,37 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = {
+          'clangd',
+          -- 'rust_analyzer',
+          'ts_ls',
+          'pyright',
+        },
+        automatic_installation = {
+          exclude = {
+            'rust_analyzer',
+          },
+        },
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+
+            if server_name == 'rust-analyzer' then
+              require('lspconfig')[server_name].setup {
+                cmd = { 'rustup', 'run', 'nightly', 'rust-analyzer' },
+                -- cmd = { 'C:/Users/JJJ51/.rustup/toolchains/stable-x86_64-pc-windows-msvc/bin/rust-analyzer.exe' },
+              }
+            else
+              require('lspconfig')[server_name].setup(server)
+            end
           end,
         },
       }
     end,
   },
-
   -- Setup for mason-lspconfig
   -- require('mason-lspconfig').setup {
   --   -- Add any specific handlers or custom logic
