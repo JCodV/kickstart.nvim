@@ -107,6 +107,9 @@ P.S. You can delete this when you're done too. It's your config now! :)
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
+
+vim.o.background = 'dark'
+
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -238,6 +241,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- GODOT CONNECTION
+-- local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
+-- if gdproject then
+--   io.close(gdproject)
+--   vim.fn.serverstart './godothost'
+-- end
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -262,76 +272,101 @@ require('lazy').setup({
   ----------------------------------------------------------------
   ----------------------- CUSTOM THEMES --------------------------
   ----------------------------------------------------------------
-  { 'ellisonleao/gruvbox.nvim', priority = 1000 },
+  {
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000,
+    config = true,
+  },
   { 'rebelot/kanagawa.nvim', priority = 1000 },
-  { 'navarasu/onedark.nvim', priority = 1000 },
+  {
+    'navarasu/onedark.nvim',
+    priority = 1000,
+    config = function()
+      require('onedark').setup {
+        style = 'warmer',
+      }
+    end,
+  },
+  -- {
+  --   'zootedb0t/citruszest.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  -- { 'cpwrs/americano.nvim' },
   { 'catppuccin/nvim', priority = 1000 },
-  { 'neanias/everforest-nvim', priority = 1000 },
+  -- { 'neanias/everforest-nvim', priority = 1000 },
   { 'EdenEast/nightfox.nvim', priority = 1000 },
   { 'vague2k/vague.nvim', priority = 1000 },
-  { 'projekt0n/github-nvim-theme', priority = 1000 },
-  { 'askfiy/visual_studio_code', priority = 1000 },
-  { 'ramojus/mellifluous.nvim', priority = 1000 },
-  { 'frenzyexists/aquarium-vim', priority = 1000 },
+  -- { 'projekt0n/github-nvim-theme', priority = 1000 },
+  -- { 'askfiy/visual_studio_code', priority = 1000 },
+  -- { 'ramojus/mellifluous.nvim', priority = 1000 },
+  -- { 'frenzyexists/aquarium-vim', priority = 1000 },
   {
     'fenetikm/falcon',
     priority = 1000,
     config = function()
       -- vim.cmd.colorscheme 'falcon'
       vim.g.falcon_background = 0
-      vim.g.falcon_inactive = 1
+      vim.g.falcon_inactive = 0
     end,
   },
-  { 'AlexvZyl/nordic.nvim', priority = 1000 },
-  { 'kvrohit/substrata.nvim', priority = 1000 },
+  -- { 'AlexvZyl/nordic.nvim', priority = 1000 },
+  -- { 'kvrohit/substrata.nvim', priority = 1000 },
   { 'ayu-theme/ayu-vim', priority = 1000 },
   { 'srcery-colors/srcery-vim', priority = 1000 },
-  {
-    'aktersnurra/no-clown-fiesta.nvim',
-    priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme 'no-clown-fiesta'
-    end,
-  },
-  {
-    'ldelossa/vimdark',
-    name = 'vimdark',
-    priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme 'vimdark'
-    end,
-  },
-  { 'water-sucks/darkrose.nvim', priority = 1000 },
+  -- {
+  --   'aktersnurra/no-clown-fiesta.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     -- vim.cmd.colorscheme 'no-clown-fiesta'
+  --   end,
+  -- },
+  -- {
+  --   'ldelossa/vimdark',
+  --   name = 'vimdark',
+  --   priority = 1000,
+  --   config = function()
+  --     -- vim.cmd.colorscheme 'vimdark'
+  --   end,
+  -- },
+  -- { 'water-sucks/darkrose.nvim', priority = 1000 },
   { 'namrabtw/rusty.nvim', priority = 1000 },
   -- { 'sts10/vim-pink-moon', priority = 1000 },
   { 'p00f/alabaster.nvim', priority = 1000 },
-  { 'gmr458/cold.nvim', priority = 1000 },
-  { 'ficcdaf/ashen.nvim', priority = 1000 },
+  -- { 'gmr458/cold.nvim', priority = 1000 },
+  -- { 'ficcdaf/ashen.nvim', priority = 1000 },
   { 'HoNamDuong/hybrid.nvim', priority = 1000 },
-  { 'fcancelinha/northern.nvim', priority = 1000 },
-  { 'AlexvZyl/nordic.nvim', priority = 1000 },
+  -- { 'fcancelinha/northern.nvim', priority = 1000 },
+  -- { 'AlexvZyl/nordic.nvim', priority = 1000 },
   { 'Mofiqul/vscode.nvim', priority = 1000 },
-  { 'navarasu/onedark.nvim', priority = 1000 },
   { 'Yazeed1s/minimal.nvim', priority = 1000 },
-  { 'Everblush/nvim', priority = 1000 },
   {
-    'sainnhe/sonokai',
-    lazy = false,
+    'Everblush/nvim',
     priority = 1000,
     config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      -- vim.g.sonokai_enable_italic = true
+      -- vim.cmd.colorscheme 'Everblush'
     end,
   },
-  { 'glepnir/zephyr-nvim', priority = 1000 },
+  -- {
+  --   'sainnhe/sonokai',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- Optionally configure and load the colorscheme
+  --     -- directly inside the plugin declaration.
+  --     -- vim.g.sonokai_enable_italic = true
+  --   end,
+  -- },
+
+  -- NOTE: not a theme but a tool for making themes
   { 'tjdevries/colorbuddy.vim', priority = 1000 },
-  { 'savq/melange-nvim', priority = 1000 },
-  { 'NTBBloodbath/doom-one.nvim', priority = 1000 },
-  { 'nxvu699134/vn-night.nvim', priority = 1000 },
-  { 'kaiuri/nvim-juliana', priority = 1000 },
+
+  -- { 'savq/melange-nvim', priority = 1000 },
+  -- { 'NTBBloodbath/doom-one.nvim', priority = 1000 },
+  -- { 'nxvu699134/vn-night.nvim', priority = 1000 },
+  -- { 'kaiuri/nvim-juliana', priority = 1000 },
   -- { 'lewpoly/sherbet.nvim', priority = 1000 },
-  { 'Mofiqul/adwaita.nvim', priority = 1000 },
+  -- { 'Mofiqul/adwaita.nvim', priority = 1000 },
   { 'mellow-theme/mellow.nvim', priority = 1000 },
   { 'dasupradyumna/midnight.nvim', priority = 1000 },
   {
@@ -361,36 +396,69 @@ require('lazy').setup({
   -- },
   { 'embark-theme/vim', priority = 1000 },
   { 'bluz71/vim-moonfly-colors', priority = 1000 },
-  { 'miikanissi/modus-themes.nvim', priority = 1000 },
   {
-    'dgox16/oldworld.nvim',
+    'zenbones-theme/zenbones.nvim',
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    dependencies = 'rktjmp/lush.nvim',
     lazy = false,
     priority = 1000,
+    -- you can set set configuration options here
+    -- config = function()
+    --     vim.g.zenbones_darken_comments = 45
+    --     vim.cmd.colorscheme('zenbones')
+    -- end
   },
+  { 'Domeee/mosel.nvim' },
+
+  -- { 'miikanissi/modus-themes.nvim', priority = 1000 },
+  -- {
+  --   'dgox16/oldworld.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   -- { 'sonph/onehalf', priority = 1000 },
   -- -- {
   -- --   'atelierbram/Base4Tone-nvim',
   -- --   priority = 1000,
   -- -- },
+  -- { 'Mofiqul/dracula.nvim' },
   {
     'datsfilipe/vesper.nvim',
     priority = 1000,
     config = function()
+      require('vesper').setup {
+        transparent = false,
+        italics = {
+          comments = false,
+          keywords = false,
+          functions = false,
+          strings = false,
+          variables = false,
+        },
+        overrides = {},
+        palette_overrides = {},
+      }
       -- vim.cmd.colorscheme 'vesper'
     end,
   },
-  {
-    'wtfox/jellybeans.nvim',
-    priority = 1000,
-    -- config = function()
-    --   -- require('jellybeans').setup {
-    --   --   italics = false,
-    --   -- }
-    --   -- vim.cmd.colorscheme 'jellybeans'
-    -- end,
-  },
-  { 'xStormyy/bearded-theme.nvim', priority = 1000 },
-  { 'k4yt3x/ayu-vim-darker', priority = 1000 },
+  -- {
+  --   'wtfox/jellybeans.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('jellybeans').setup {
+  --       italics = false,
+  --       plugins = {
+  --         all = false,
+  --         auto = false,
+  --       },
+  --     }
+  --     --   -- vim.cmd.colorscheme 'jellybeans'
+  --   end,
+  -- },
+  -- { 'k4yt3x/ayu-vim-darker', priority = 1000 },
   {
     'uloco/bluloco.nvim',
     lazy = false,
@@ -400,7 +468,7 @@ require('lazy').setup({
       -- your optional config goes here, see below.
     end,
   },
-  { 'effkay/argonaut.vim' },
+  -- { 'effkay/argonaut.vim' },
   { 'illegalLeft/honeywell.vim' },
   {
     'deparr/tairiki.nvim',
@@ -410,24 +478,76 @@ require('lazy').setup({
       require('tairiki').setup {
         -- optional configuration here
       }
-      vim.cmd.colorscheme 'tairiki'
+      -- vim.cmd.colorscheme 'tairiki'
     end,
   },
   { 'jacoborus/tender.vim' },
-  { 'Skardyy/makurai-nvim' },
+  {
+    'Skardyy/makurai-nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'makurai'
+    end,
+  },
+  {
+    'alligator/accent.vim',
+    config = function()
+      vim.g.accent_colour = 'blue'
+      -- vim.cmd.colorscheme 'accent'
+    end,
+  },
+  {
+    'slugbyte/lackluster.nvim',
+    lazy = false,
+    priority = 1000,
+
+    config = function()
+      -- vim.cmd.colorscheme 'lackluster-night'
+    end,
+  },
+  { 'NLKNguyen/papercolor-theme' },
+  { 'nuvic/flexoki-nvim' },
+  {
+    'Verf/deepwhite.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd [[colorscheme deepwhite]]
+    end,
+  },
+  { 'arturgoms/moonbow.nvim' },
+  -- {
+  --   'shadowy-pycoder/vscode-gruber.nvim',
+  --   dependencies = { 'rktjmp/lush.nvim' },
+  --   name = 'vscode-gruber',
+  -- },
+  -- { 'rose-pine/neovim' },
+
+  --  BUG: not compatible with pairs plugin
+  -- { 'Wansmer/serenity.nvim', priority = 1000 },
 
   --  BUG: something to do with t_co
+  -- { 'Th3Whit3Wolf/one-nvim' },
+
+  ----------------------------------------------------------------
+  --PLUGINS I MADE------------------------------------------------
+  ----------------------------------------------------------------
   -- {
-  --   'Th3Whit3Wolf/one-nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'one-nvim'
-  --   end,
+  --   dir = '~/Projects/Other/base-type.nvim',
+  -- name = 'base-type.nvim',
+  -- config = function()
+  --   require 'base-type.nvim'
+  -- end,
   -- },
 
   ----------------------------------------------------------------
   --CUSTOM PLUGINS------------------------------------------------
   ----------------------------------------------------------------
+  -- {
+  --   'nvim-lualine/lualine.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  -- },
   {
     'stevearc/oil.nvim',
     ---@module 'oil'
@@ -451,6 +571,7 @@ require('lazy').setup({
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
+  { 'nvim-java/nvim-java' },
 
   ----------------------------------------------------------------
   --PRE-INSTALLED PLUGINS ----------------------------------------
@@ -827,6 +948,24 @@ require('lazy').setup({
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+      -- require('lspconfig').gdscript.setup(capabilities)
+
+      -- GODOT LSP SETUP
+      local gdscript_config = {
+        capabilities = capabilities,
+        settings = {},
+      }
+      if vim.fn.has 'win32' == 1 then
+        gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
+      end
+      require('lspconfig').gdscript.setup(gdscript_config)
+
+      -- OLD GODOT LSP SETUP
+      -- require('lspconfig')['gdscript'].setup {
+      --   name = 'godot',
+      --   cmd = { 'ncat', '127.0.0.1', '6005' },
+      -- }
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -840,7 +979,7 @@ require('lazy').setup({
         clangd = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         ts_ls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -898,23 +1037,19 @@ require('lazy').setup({
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
 
-            if server_name == 'rust-analyzer' then
-              require('lspconfig')[server_name].setup {
-                cmd = { 'rustup', 'run', 'nightly', 'rust-analyzer' },
-                -- cmd = { 'C:/Users/JJJ51/.rustup/toolchains/stable-x86_64-pc-windows-msvc/bin/rust-analyzer.exe' },
+            if server_name == 'rust_analyzer' then
+              require('lspconfig')['rust_analyzer'].setup {
+                capabilities = capabilities,
+                cmd = { 'rust_analyzer' },
+                -- on_attach = on_attach
               }
             else
               require('lspconfig')[server_name].setup(server)
             end
           end,
         },
-      }
-    end,
-  },
+
   -- Setup for mason-lspconfig
   -- require('mason-lspconfig').setup {
   --   -- Add any specific handlers or custom logic
@@ -1230,6 +1365,9 @@ require('lazy').setup({
     },
   },
 })
+
+-- SET COLORSCHEME HERE
+vim.cmd.colorscheme 'flexoki'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
