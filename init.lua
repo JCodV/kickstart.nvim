@@ -1,3 +1,4 @@
+vim.o.background = 'dark'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -21,6 +22,7 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+vim.opt.cmdheight = 2
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -140,6 +142,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- GODOT CONNECTION
+-- local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
+-- if gdproject then
+--   io.close(gdproject)
+--   vim.fn.serverstart './godothost'
+-- end
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -152,9 +161,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -179,8 +186,9 @@ require('lazy').setup({
   -- which loads which-key before all the UI elements are loaded. Events can be
   -- normal autocommands events (`:help autocmd-events`).
   --
-  -- Then, because we use the `opts` key (recommended), the configuration runs
-  -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
+  -- Then, because we use the `config` key, the configuration only runs
+  -- after the plugin has been loaded:
+  --  config = function() ... end
 
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
@@ -542,13 +550,30 @@ require('lazy').setup({
           end,
         },
       }
-
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
+      -- require('lspconfig').gdscript.setup(capabilities)
+
+      -- GODOT LSP SETUP
+      local gdscript_config = {
+        capabilities = capabilities,
+        settings = {},
+      }
+      if vim.fn.has 'win32' == 1 then
+        gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
+      end
+      require('lspconfig').gdscript.setup(gdscript_config)
+
+      -- OLD GODOT LSP SETUP
+      -- require('lspconfig')['gdscript'].setup {
+      --   name = 'godot',
+      --   cmd = { 'ncat', '127.0.0.1', '6005' },
+      -- }
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -564,6 +589,7 @@ require('lazy').setup({
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
+
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -574,8 +600,8 @@ require('lazy').setup({
         --
 
         lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
+          -- cmd = {...},
+          -- filetypes = { ...},
           -- capabilities = {},
           settings = {
             Lua = {
@@ -609,14 +635,18 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
+
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
+
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
+
             if server_name == 'rust_analyzer' then
               require('lspconfig')['rust_analyzer'].setup {
                 capabilities = capabilities,
@@ -626,11 +656,34 @@ require('lazy').setup({
 
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
+
           end,
         },
-      }
-    end,
-  },
+
+  -- Setup for mason-lspconfig
+  -- require('mason-lspconfig').setup {
+  --   -- Add any specific handlers or custom logic
+  --   handlers = {
+  --     function(server_name)
+  --       local server = servers[server_name] or {}
+  --       -- Overriding server configuration as needed
+  --       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+  --
+  --       -- Add manual configuration for zls
+  --       if server_name == "zls" then
+  --         -- Customize the configuration if needed
+  --         require('lspconfig')[server_name].setup({
+  --           cmd = { "zls/src/zls.zig" }, -- Specify the correct path if needed
+  --           filetypes = { "zig" },    -- Set filetypes for zig
+  --           root_dir = require('lspconfig').util.root_pattern('build.zig', '.git'),
+  --         })
+  --       else
+  --         -- Use the default handler for other servers
+  --         require('lspconfig')[server_name].setup(server)
+  --       end
+  --     end,
+  --   },
+  -- }
 
   { -- Autoformat
     'stevearc/conform.nvim',
@@ -842,6 +895,7 @@ require('lazy').setup({
       auto_install = true,
       highlight = {
         enable = true,
+        disable = { 'zig' },
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
