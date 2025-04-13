@@ -17,6 +17,11 @@ return {
       },
       -- auto format on save
       on_attach = function(client, bufnr)
+        local filetype = vim.bo.filetype()
+        if client.name == 'ols' or filetype == 'odin' then
+          return
+        end
+
         if client.supports_method 'textDocument/formatting' then
           vim.api.nvim_clear_autocmds {
             group = augroup,

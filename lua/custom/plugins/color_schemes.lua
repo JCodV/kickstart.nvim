@@ -144,9 +144,29 @@ return {
   {
     'ferdinandrau/carbide.nvim',
     config = function()
-      vim.cmd.colorscheme 'carbide'
+      -- vim.cmd.colorscheme 'carbide'
     end,
   },
   { 'Oniup/ignite.nvim' },
   { '2giosangmitom/nightfall.nvim' },
+  { 'Biscuit-Theme/nvim' },
+
+  {
+    'DanielEliasib/sweet-fusion',
+    name = 'sweet-fusion',
+    priority = 1000,
+    opts = {
+      -- Set transparent background
+      transparency = false,
+      dim_inactive = true,
+    },
+  },
+  {
+    'AxelGard/oneokai.nvim',
+    config = function()
+      require('oneokai').setup {
+        style = 'black',
+      }
+    end,
+  },
 }
