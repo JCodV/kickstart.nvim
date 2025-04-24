@@ -1,14 +1,4 @@
 return {
-  -- {
-  --   'jvvz/jvvz-nvim',
-  --   {
-  --     dir = 'C:/Users/JJJ51/dev/projects/jvvz-nvim',
-  --     -- lazy = false,
-  --     -- config = function()
-  --     --   vim.cmd.colorscheme 'jvvz'
-  --     -- end,
-  --   },
-  -- },
   {
     'ellisonleao/gruvbox.nvim',
     -- config = function()
@@ -16,18 +6,19 @@ return {
     --   vim.cmd.colorscheme 'gruvbox'
     -- end,
   },
-  -- { 'rebelot/kanagawa.nvim' },
+  { 'rebelot/kanagawa.nvim' },
   { 'EdenEast/nightfox.nvim' },
-  {
-    'fenetikm/falcon',
-    config = function()
-      vim.g.falcon_background = 0
-      vim.g.falcon_inactive = 1
-      -- vim.cmd.colorscheme 'falcon'
-      -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
-    end,
-  },
+  -- {
+  --   'fenetikm/falcon',
+  --   config = function()
+  --     vim.g.falcon_background = 0
+  --     vim.g.falcon_inactive = 1
+  --     -- vim.cmd.colorscheme 'falcon'
+  --     -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
+  --   end,
+  -- },
   { 'ayu-theme/ayu-vim' },
+  -- { 'Shatur/neovim-ayu' },
   -- { 'HoNamDuong/hybrid.nvim', name = 'hybrid' },
   -- { 'Mofiqul/vscode.nvim' },
   -- { 'dasupradyumna/midnight.nvim' },
@@ -70,24 +61,25 @@ return {
     --   vim.cmd.colorscheme 'tokyonight'
     -- end,
   },
-  -- { 'metalelf0/jellybeans-nvim' },
+  { 'metalelf0/jellybeans-nvim' },
   { 'catppuccin/nvim', name = 'catppuccin' },
   {
     'sainnhe/gruvbox-material',
     lazy = false,
-    -- config = function()
-    --   vim.o.background = 'dark'
-    --   vim.g.gruvbox_material_background = 'hard'
-    --   vim.g.gruvbox_material_enable_italic = false
-    --   vim.cmd.colorscheme 'gruvbox-material'
-    -- end,
+    config = function()
+      --   vim.o.background = 'dark'
+      --   vim.g.gruvbox_material_background = 'hard'
+      vim.g.gruvbox_material_enable_italic = false
+      --   vim.cmd.colorscheme 'gruvbox-material'
+    end,
   },
   {
     'slugbyte/lackluster.nvim',
     lazy = false,
-    -- config = function()
-    --   vim.cmd.colorscheme 'lackluster-night'
-    -- end,
+    config = function()
+      -- vim.cmd.colorscheme 'lackluster-hack'
+      -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
+    end,
   },
   -- {
   --   'pedropmedina/darkside',
@@ -108,14 +100,13 @@ return {
     priority = 1000,
   },
   -- { 'metalelf0/base16-black-metal-scheme' },
-  { 'lifepillar/vim-gruvbox8' },
+  -- { 'lifepillar/vim-gruvbox8' },
   { 'VonHeikemen/rubber-themes.vim' },
   { 'felipeagc/fleet-theme-nvim' },
   {
     'idr4n/github-monochrome.nvim',
     config = function()
       -- vim.cmd.colorscheme 'github-monochrome-solarized'
-      -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
     end,
   },
   { 'lpuljic/nox-modus.nvim' },
@@ -130,15 +121,11 @@ return {
     },
   },
   {
-    'vim-scripts/strange',
-  },
-  {
     'p0209p/naysayer.vim',
     priority = 1000,
     lazy = false,
   },
-  { 'oni0002/neg.vim' },
-  { 'doums/espresso.nvim' },
+  -- { 'oni0002/neg.vim' },
   { 'shawnohare/hadalized.nvim' },
   { 'pustota-theme/pustota.nvim' },
   {
@@ -148,25 +135,51 @@ return {
     end,
   },
   { 'Oniup/ignite.nvim' },
-  { '2giosangmitom/nightfall.nvim' },
-  { 'Biscuit-Theme/nvim' },
 
-  {
-    'DanielEliasib/sweet-fusion',
-    name = 'sweet-fusion',
-    priority = 1000,
-    opts = {
-      -- Set transparent background
-      transparency = false,
-      dim_inactive = true,
-    },
-  },
   {
     'AxelGard/oneokai.nvim',
     config = function()
       require('oneokai').setup {
         style = 'black',
       }
+    end,
+  },
+  -- {
+  --   'drewxs/ash.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  -- {
+  --   'topazape/oldtale.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  { 'NLKNguyen/papercolor-theme' },
+  { 'dikiaap/minimalist' },
+  -- {
+  --   'steguiosaur/fullerene.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  {
+    'nyngwang/memoonry.nvim',
+  },
+  { 'Arjun-Somvanshi/new-dawn-fades' },
+  { 'wesgibbs/vim-irblack' },
+  { 'michaeljsmith/vim-colours-dark-lord' },
+  { 'itspriddle/vim-themes' },
+  { 'trapd00r/neverland-vim-theme' },
+  {
+    'maxmx03/solarized.nvim',
+    lazy = false,
+    priority = 1000,
+    ---@type solarized.config
+    opts = {},
+    config = function(_, opts)
+      vim.o.termguicolors = true
+      -- vim.o.background = 'light'
+      -- require('solarized').setup(opts)
+      -- vim.cmd.colorscheme 'solarized'
     end,
   },
 }

@@ -17,7 +17,7 @@ return {
       },
       -- auto format on save
       on_attach = function(client, bufnr)
-        local filetype = vim.bo.filetype()
+        local filetype = vim.bo[bufnr].filetype
         if client.name == 'ols' or filetype == 'odin' then
           return
         end

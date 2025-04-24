@@ -1,3 +1,7 @@
+vim.opt_global.tabstop = 2
+vim.opt_global.shiftwidth = 2
+
+vim.g.t_Co = 256
 vim.o.background = 'dark'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
