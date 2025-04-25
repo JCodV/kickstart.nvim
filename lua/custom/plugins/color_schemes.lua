@@ -1,5 +1,9 @@
 return {
   {
+    'JCodV/dragon.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+  },
+  {
     'ellisonleao/gruvbox.nvim',
     -- config = function()
     --   require('gruvbox').setup()
