@@ -120,11 +120,12 @@ return {
       'rktjmp/lush.nvim',
     },
   },
-  {
-    'p0209p/naysayer.vim',
-    priority = 1000,
-    lazy = false,
-  },
+  -- {
+  --   'p0209p/naysayer.vim',
+  --   priority = 1000,
+  --   lazy = false,
+  -- },
+  { 'jameswalls/naysayer.nvim', name = 'naysayer2' },
   -- { 'oni0002/neg.vim' },
   { 'shawnohare/hadalized.nvim' },
   { 'pustota-theme/pustota.nvim' },
