@@ -2,6 +2,9 @@ return {
   {
     'JCodV/dragon.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
+    config = function()
+      vim.cmd.colorscheme 'dragon'
+    end,
   },
   {
     'ellisonleao/gruvbox.nvim',
@@ -186,4 +189,16 @@ return {
       -- vim.cmd.colorscheme 'solarized'
     end,
   },
+  {
+    'datsfilipe/vesper.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'vesper'
+    end,
+  },
+  { 'sam4llis/nvim-tundra' },
+  { 'octol/vombatidae-vim' },
+  { 'tjdevries/gruvbox-tj' },
+  { 'w0ng/vim-hybrid' },
+  { 'ajmwagar/vim-deus' },
 }
