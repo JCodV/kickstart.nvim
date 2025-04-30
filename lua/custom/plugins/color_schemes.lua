@@ -2,13 +2,21 @@ return {
   {
     'JCodV/dragon.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
+    config = function()
+      -- vim.cmd.colorscheme 'dragon'
+    end,
   },
   {
     'ellisonleao/gruvbox.nvim',
-    -- config = function()
-    --   require('gruvbox').setup()
-    --   vim.cmd.colorscheme 'gruvbox'
-    -- end,
+    config = function()
+      require('gruvbox').setup {
+        overrides = {
+          Normal = { bg = '#111111' },
+        },
+      }
+
+      vim.cmd.colorscheme 'gruvbox'
+    end,
   },
   { 'rebelot/kanagawa.nvim' },
   { 'EdenEast/nightfox.nvim' },
@@ -66,7 +74,17 @@ return {
     -- end,
   },
   { 'metalelf0/jellybeans-nvim' },
-  { 'catppuccin/nvim', name = 'catppuccin' },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    config = function()
+      require('catppuccin').setup {
+        color_overrides = {
+          Normal = { bg = '#111111' },
+        },
+      }
+    end,
+  },
   {
     'sainnhe/gruvbox-material',
     lazy = false,
@@ -187,4 +205,18 @@ return {
       -- vim.cmd.colorscheme 'solarized'
     end,
   },
+  {
+    'datsfilipe/vesper.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'vesper'
+    end,
+  },
+  { 'sam4llis/nvim-tundra' },
+  { 'octol/vombatidae-vim' },
+  { 'tjdevries/gruvbox-tj' },
+  { 'w0ng/vim-hybrid' },
+  { 'ajmwagar/vim-deus' },
+  -- { 'KabbAmine/yowish.vim' },
+  { 'felipec/vim-felipec' },
 }
