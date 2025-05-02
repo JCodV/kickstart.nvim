@@ -15,7 +15,7 @@ return {
         },
       }
 
-      vim.cmd.colorscheme 'gruvbox'
+      -- vim.cmd.colorscheme 'gruvbox'
     end,
   },
   { 'rebelot/kanagawa.nvim' },
@@ -90,9 +90,13 @@ return {
     lazy = false,
     config = function()
       --   vim.o.background = 'dark'
-      --   vim.g.gruvbox_material_background = 'hard'
+      vim.g.gruvbox_material_background = 'hard'
       vim.g.gruvbox_material_enable_italic = false
-      --   vim.cmd.colorscheme 'gruvbox-material'
+      vim.g.gruvbox_material_colors_override = {
+        bg0 = { '#111111', '234' },
+      }
+      -- vim.g.gruvbox_material_enable_bold = 1
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -205,18 +209,7 @@ return {
       -- vim.cmd.colorscheme 'solarized'
     end,
   },
-  {
-    'datsfilipe/vesper.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'vesper'
-    end,
-  },
-  { 'sam4llis/nvim-tundra' },
-  { 'octol/vombatidae-vim' },
-  { 'tjdevries/gruvbox-tj' },
   { 'w0ng/vim-hybrid' },
-  { 'ajmwagar/vim-deus' },
-  -- { 'KabbAmine/yowish.vim' },
-  { 'felipec/vim-felipec' },
+  { 'srcery-colors/srcery-vim' },
+  { 'JCodV/joko' },
 }
