@@ -58,12 +58,18 @@ return {
     --   vim.cmd.colorscheme 'makurai'
     -- end,
   },
+  -- {
+  --   'nuvic/flexoki-nvim',
+  --   lazy = false,
+  --   -- config = function()
+  --   --   vim.cmd.colorscheme 'flexoki'
+  --   -- end,
+  -- },
   {
-    'nuvic/flexoki-nvim',
+    'cpplain/flexoki.nvim',
     lazy = false,
-    -- config = function()
-    --   vim.cmd.colorscheme 'flexoki'
-    -- end,
+    priority = 1000,
+    opts = {},
   },
   {
     'folke/tokyonight.nvim',
@@ -217,7 +223,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'kanso-zen'
+      -- vim.cmd.colorscheme 'kanso-zen'
     end,
   },
   {
@@ -225,10 +231,12 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require('black-metal').setup {
-        -- optional configuration here
-      }
-      require('black-metal').load()
+      vim.cmd.colorschem 'windir-alt'
+      -- require('black-metal').setup {
+      -- optional configuration here
+      -- }
+      -- require('black-metal').load()
     end,
   },
+  { 'srcery-colors/srcery-vim' },
 }
