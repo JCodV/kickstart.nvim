@@ -86,7 +86,10 @@ return {
     config = function()
       require('catppuccin').setup {
         color_overrides = {
-          Normal = { bg = '#111111' },
+          frappe = {
+            -- base = '#111111',
+            base = '#000000',
+          },
         },
       }
     end,
@@ -231,7 +234,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorschem 'windir-alt'
+      vim.cmd.colorscheme 'windir'
       -- require('black-metal').setup {
       -- optional configuration here
       -- }
