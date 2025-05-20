@@ -20,17 +20,17 @@ return {
   },
   { 'rebelot/kanagawa.nvim' },
   { 'EdenEast/nightfox.nvim' },
-  -- {
-  --   'fenetikm/falcon',
-  --   config = function()
-  --     vim.g.falcon_background = 0
-  --     vim.g.falcon_inactive = 1
-  --     -- vim.cmd.colorscheme 'falcon'
-  --     -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
-  --   end,
-  -- },
-  { 'ayu-theme/ayu-vim' },
-  -- { 'Shatur/neovim-ayu' },
+  {
+    'fenetikm/falcon',
+    config = function()
+      vim.g.falcon_background = 0
+      vim.g.falcon_inactive = 0
+      -- vim.cmd.colorscheme 'falcon'
+      -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
+    end,
+  },
+  -- { 'ayu-theme/ayu-vim' },
+  { 'Shatur/neovim-ayu' },
   -- { 'HoNamDuong/hybrid.nvim', name = 'hybrid' },
   -- { 'Mofiqul/vscode.nvim' },
   -- { 'dasupradyumna/midnight.nvim' },
@@ -160,7 +160,7 @@ return {
   --   priority = 1000,
   --   lazy = false,
   -- },
-  { 'jameswalls/naysayer.nvim', name = 'naysayer2' },
+  { 'jameswalls/naysayer.nvim' },
   -- { 'oni0002/neg.vim' },
   { 'shawnohare/hadalized.nvim' },
   { 'pustota-theme/pustota.nvim' },
@@ -219,8 +219,9 @@ return {
     end,
   },
   { 'w0ng/vim-hybrid' },
-  { 'srcery-colors/srcery-vim' },
-  { 'JCodV/joko' },
+  {
+    'JCodV/joko',
+  },
   {
     'webhooked/kanso.nvim',
     lazy = false,
@@ -233,13 +234,38 @@ return {
     'metalelf0/black-metal-theme-neovim',
     lazy = false,
     priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme 'windir'
+    -- require('black-metal').setup {
+    -- optional configuration here
+    -- }
+    -- require('black-metal').load()
+    -- end,
+  },
+  {
+    'srcery-colors/srcery-vim',
     config = function()
-      vim.cmd.colorscheme 'windir'
-      -- require('black-metal').setup {
-      -- optional configuration here
-      -- }
-      -- require('black-metal').load()
+      vim.g.srcery_bg = { '#000000', 16 }
+      vim.cmd.colorscheme 'srcery'
     end,
   },
-  { 'srcery-colors/srcery-vim' },
+  {
+    '2nthony/vitesse.nvim',
+    dependencies = {
+      'tjdevries/colorbuddy.nvim',
+    },
+  },
+  {
+    'kaiuri/nvim-juliana',
+    lazy = false,
+    opts = {
+      colors = {
+        bg0 = '#111111',
+        bg1 = '#111111',
+        bg2 = '#111111',
+        bg3 = '#111111',
+      },
+    },
+    config = true,
+  },
 }
