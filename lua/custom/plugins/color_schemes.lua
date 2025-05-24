@@ -6,6 +6,10 @@ return {
       -- vim.cmd.colorscheme 'dragon'
     end,
   },
+  { 'echasnovski/mini.base16' },
+  { 'vext01/reason-vim-colorscheme' },
+  { 'rafikdraoui/couleurs.vim' },
+  { 'theJian/nvim-moonwalk' },
   {
     'ellisonleao/gruvbox.nvim',
     config = function()
@@ -18,19 +22,19 @@ return {
       -- vim.cmd.colorscheme 'gruvbox'
     end,
   },
-  { 'rebelot/kanagawa.nvim' },
-  { 'EdenEast/nightfox.nvim' },
-  {
-    'fenetikm/falcon',
-    config = function()
-      vim.g.falcon_background = 0
-      vim.g.falcon_inactive = 0
-      -- vim.cmd.colorscheme 'falcon'
-      -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
-    end,
-  },
+  -- { 'rebelot/kanagawa.nvim' },
+  -- { 'EdenEast/nightfox.nvim' },
+  -- {
+  --   'fenetikm/falcon',
+  --   config = function()
+  --     vim.g.falcon_background = 0
+  --     vim.g.falcon_inactive = 0
+  --     -- vim.cmd.colorscheme 'falcon'
+  --     -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
+  --   end,
+  -- },
   -- { 'ayu-theme/ayu-vim' },
-  { 'Shatur/neovim-ayu' },
+  -- { 'Shatur/neovim-ayu' },
   -- { 'HoNamDuong/hybrid.nvim', name = 'hybrid' },
   -- { 'Mofiqul/vscode.nvim' },
   -- { 'dasupradyumna/midnight.nvim' },
@@ -51,13 +55,13 @@ return {
       -- vim.cmd.colorscheme 'tairiki-dimmed'
     end,
   },
-  {
-    'Skardyy/makurai-nvim',
-    lazy = false,
-    -- config = function()
-    --   vim.cmd.colorscheme 'makurai'
-    -- end,
-  },
+  -- {
+  --   'Skardyy/makurai-nvim',
+  --   lazy = false,
+  --   -- config = function()
+  --   --   vim.cmd.colorscheme 'makurai'
+  --   -- end,
+  -- },
   -- {
   --   'nuvic/flexoki-nvim',
   --   lazy = false,
@@ -146,15 +150,15 @@ return {
   },
   { 'lpuljic/nox-modus.nvim' },
   -- { 'cooperuser/glowbeam.nvim' },
-  {
-    'ramojus/mellifluous.nvim',
-  },
-  {
-    'CosecSecCot/midnight-desert.nvim',
-    dependencies = {
-      'rktjmp/lush.nvim',
-    },
-  },
+  -- {
+  --   'ramojus/mellifluous.nvim',
+  -- },
+  -- {
+  --   'CosecSecCot/midnight-desert.nvim',
+  --   dependencies = {
+  --     'rktjmp/lush.nvim',
+  --   },
+  -- },
   -- {
   --   'p0209p/naysayer.vim',
   --   priority = 1000,
@@ -162,7 +166,7 @@ return {
   -- },
   { 'jameswalls/naysayer.nvim' },
   -- { 'oni0002/neg.vim' },
-  { 'shawnohare/hadalized.nvim' },
+  -- { 'shawnohare/hadalized.nvim' },
   { 'pustota-theme/pustota.nvim' },
   {
     'ferdinandrau/carbide.nvim',
@@ -170,16 +174,16 @@ return {
       -- vim.cmd.colorscheme 'carbide'
     end,
   },
-  { 'Oniup/ignite.nvim' },
+  -- { 'Oniup/ignite.nvim' },
 
-  {
-    'AxelGard/oneokai.nvim',
-    config = function()
-      require('oneokai').setup {
-        style = 'black',
-      }
-    end,
-  },
+  -- {
+  --   'AxelGard/oneokai.nvim',
+  --   config = function()
+  --     require('oneokai').setup {
+  --       style = 'black',
+  --     }
+  --   end,
+  -- },
   -- {
   --   'drewxs/ash.nvim',
   --   lazy = false,
@@ -190,8 +194,8 @@ return {
   --   lazy = false,
   --   priority = 1000,
   -- },
-  { 'NLKNguyen/papercolor-theme' },
-  { 'dikiaap/minimalist' },
+  -- { 'NLKNguyen/papercolor-theme' },
+  -- { 'dikiaap/minimalist' },
   -- {
   --   'steguiosaur/fullerene.nvim',
   --   lazy = false,
@@ -199,11 +203,19 @@ return {
   -- },
   {
     'nyngwang/memoonry.nvim',
+    config = function()
+      vim.cmd.colorscheme 'memoonry'
+    end,
   },
-  { 'Arjun-Somvanshi/new-dawn-fades' },
-  { 'wesgibbs/vim-irblack' },
-  { 'michaeljsmith/vim-colours-dark-lord' },
-  { 'itspriddle/vim-themes' },
+  {
+    'Arjun-Somvanshi/new-dawn-fades',
+    config = function()
+      -- vim.cmd.colorscheme 'new-dawn-fades'
+    end,
+  },
+  -- { 'wesgibbs/vim-irblack' },
+  -- { 'michaeljsmith/vim-colours-dark-lord' },
+  -- { 'itspriddle/vim-themes' },
   { 'trapd00r/neverland-vim-theme' },
   {
     'maxmx03/solarized.nvim',
@@ -245,16 +257,20 @@ return {
   {
     'srcery-colors/srcery-vim',
     config = function()
-      vim.g.srcery_bg = { '#000000', 16 }
-      vim.cmd.colorscheme 'srcery'
+      local pure_black = '#000000'
+      local light_bronze = '#b99468'
+
+      -- vim.g.srcery_bg = { pure_black, 16 }
+      -- vim.g.srcery_bright_white = light_bronze
+      -- vim.cmd.colorscheme 'srcery'
     end,
   },
-  {
-    '2nthony/vitesse.nvim',
-    dependencies = {
-      'tjdevries/colorbuddy.nvim',
-    },
-  },
+  -- {
+  --   '2nthony/vitesse.nvim',
+  --   dependencies = {
+  --     'tjdevries/colorbuddy.nvim',
+  --   },
+  -- },
   {
     'kaiuri/nvim-juliana',
     lazy = false,
