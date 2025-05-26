@@ -6,10 +6,26 @@ return {
       -- vim.cmd.colorscheme 'dragon'
     end,
   },
-  { 'echasnovski/mini.base16' },
-  { 'vext01/reason-vim-colorscheme' },
+  -- {
+  --   'Biscuit-Theme/nvim',
+  -- },
+  { 'YorickPeterse/vim-paper' },
+  {
+    'whizikxd/naysayer-colors.nvim',
+    lazy = false,
+  },
+  { 'atelierbram/Base2Tone-nvim' },
+  -- {
+  --   'skylarmb/torchlight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     contrast = 'medium', -- possible values: soft, medium, hard
+  --   },
+  -- },
+  -- { 'echasnovski/mini.base16' },
+  -- { 'vext01/reason-vim-colorscheme' },
   { 'rafikdraoui/couleurs.vim' },
-  { 'theJian/nvim-moonwalk' },
   {
     'ellisonleao/gruvbox.nvim',
     config = function()
@@ -164,7 +180,7 @@ return {
   --   priority = 1000,
   --   lazy = false,
   -- },
-  { 'jameswalls/naysayer.nvim' },
+  -- { 'jameswalls/naysayer.nvim' },
   -- { 'oni0002/neg.vim' },
   -- { 'shawnohare/hadalized.nvim' },
   { 'pustota-theme/pustota.nvim' },
