@@ -1,14 +1,21 @@
 return {
   {
+    {
+      dir = 'C:/Users/JJJ51/dev/projects/jvvz-nvim',
+      name = 'jvvz',
+      -- config = function()
+      --   -- Plugin configuration here
+      -- end,
+    },
+  },
+  {
     'JCodV/dragon.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
     config = function()
       -- vim.cmd.colorscheme 'dragon'
     end,
   },
-  { 'echasnovski/mini.base16' },
-  { 'vext01/reason-vim-colorscheme' },
-  { 'rafikdraoui/couleurs.vim' },
+  -- { 'rafikdraoui/couleurs.vim' },
   { 'theJian/nvim-moonwalk' },
   {
     'ellisonleao/gruvbox.nvim',
@@ -131,24 +138,24 @@ return {
     --   vim.cmd.colorscheme 'alabaster'
     -- end,
   },
-  {
-    'mcauley-penney/ice-cave.nvim',
-    config = function()
-      -- vim.cmd.colorscheme 'ice-cave'
-    end,
-    priority = 1000,
-  },
+  -- {
+  --   'mcauley-penney/ice-cave.nvim',
+  --   config = function()
+  --     -- vim.cmd.colorscheme 'ice-cave'
+  --   end,
+  --   priority = 1000,
+  -- },
   -- { 'metalelf0/base16-black-metal-scheme' },
   -- { 'lifepillar/vim-gruvbox8' },
-  { 'VonHeikemen/rubber-themes.vim' },
-  { 'felipeagc/fleet-theme-nvim' },
+  -- { 'VonHeikemen/rubber-themes.vim' },
+  -- { 'felipeagc/fleet-theme-nvim' },
   {
     'idr4n/github-monochrome.nvim',
     config = function()
       -- vim.cmd.colorscheme 'github-monochrome-solarized'
     end,
   },
-  { 'lpuljic/nox-modus.nvim' },
+  -- { 'lpuljic/nox-modus.nvim' },
   -- { 'cooperuser/glowbeam.nvim' },
   -- {
   --   'ramojus/mellifluous.nvim',
@@ -167,7 +174,7 @@ return {
   { 'jameswalls/naysayer.nvim' },
   -- { 'oni0002/neg.vim' },
   -- { 'shawnohare/hadalized.nvim' },
-  { 'pustota-theme/pustota.nvim' },
+  -- { 'pustota-theme/pustota.nvim' },
   {
     'ferdinandrau/carbide.nvim',
     config = function()
@@ -201,36 +208,36 @@ return {
   --   lazy = false,
   --   priority = 1000,
   -- },
-  {
-    'nyngwang/memoonry.nvim',
-    config = function()
-      vim.cmd.colorscheme 'memoonry'
-    end,
-  },
-  {
-    'Arjun-Somvanshi/new-dawn-fades',
-    config = function()
-      -- vim.cmd.colorscheme 'new-dawn-fades'
-    end,
-  },
+  -- {
+  --   'nyngwang/memoonry.nvim',
+  --   config = function()
+  --     vim.cmd.colorscheme 'memoonry'
+  --   end,
+  -- },
+  -- {
+  --   'Arjun-Somvanshi/new-dawn-fades',
+  --   config = function()
+  --     -- vim.cmd.colorscheme 'new-dawn-fades'
+  --   end,
+  -- },
   -- { 'wesgibbs/vim-irblack' },
   -- { 'michaeljsmith/vim-colours-dark-lord' },
   -- { 'itspriddle/vim-themes' },
-  { 'trapd00r/neverland-vim-theme' },
-  {
-    'maxmx03/solarized.nvim',
-    lazy = false,
-    priority = 1000,
-    ---@type solarized.config
-    opts = {},
-    config = function(_, opts)
-      vim.o.termguicolors = true
-      -- vim.o.background = 'light'
-      -- require('solarized').setup(opts)
-      -- vim.cmd.colorscheme 'solarized'
-    end,
-  },
-  { 'w0ng/vim-hybrid' },
+  -- { 'trapd00r/neverland-vim-theme' },
+  -- {
+  --   'maxmx03/solarized.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   ---@type solarized.config
+  --   opts = {},
+  --   config = function(_, opts)
+  --     vim.o.termguicolors = true
+  --     -- vim.o.background = 'light'
+  --     -- require('solarized').setup(opts)
+  --     -- vim.cmd.colorscheme 'solarized'
+  --   end,
+  -- },
+  -- { 'w0ng/vim-hybrid' },
   {
     'JCodV/joko',
   },

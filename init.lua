@@ -1,9 +1,13 @@
+-- neovide settings
+vim.g.neovide_fullscreen = true
+vim.o.guifont = 'Cousine Nerd Font Mono'
+
 -- tab size
 vim.opt_global.tabstop = 2
 vim.opt_global.shiftwidth = 2
 
 -- cursor settings
-vim.o.guicursor = 'n-v-c-sm:block,i-ci-ve:block,r-cr-o:block'
+-- vim.o.guicursor = 'n-v-c-sm:block,i-ci-ve:block,r-cr-o:block'
 -- not working
 -- vim.o.termguicolors = true
 -- vim.cmd [[highlight Cursor guifg=black guibg=#00FF00]]
