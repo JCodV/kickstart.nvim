@@ -1,13 +1,13 @@
 return {
-  {
-    {
-      dir = 'C:/Users/JJJ51/dev/projects/jvvz-nvim',
-      name = 'jvvz',
-      -- config = function()
-      --   -- Plugin configuration here
-      -- end,
-    },
-  },
+  -- {
+  --    {
+  --      dir = 'C:/Users/JJJ51/dev/projects/jvvz-nvim',
+  --      name = 'jvvz',
+  --      -- config = function()
+  --      --   -- Plugin configuration here
+  --      -- end,
+  --    },
+  --  },
   {
     'JCodV/dragon.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
@@ -23,7 +23,7 @@ return {
     'whizikxd/naysayer-colors.nvim',
     lazy = false,
   },
-  { 'atelierbram/Base2Tone-nvim' },
+  -- { 'atelierbram/Base2Tone-nvim' },
   -- {
   --   'skylarmb/torchlight.nvim',
   --   lazy = false,
@@ -34,7 +34,7 @@ return {
   -- },
   -- { 'echasnovski/mini.base16' },
   -- { 'vext01/reason-vim-colorscheme' },
-  { 'rafikdraoui/couleurs.vim' },
+  -- { 'rafikdraoui/couleurs.vim' },
   {
     'ellisonleao/gruvbox.nvim',
     config = function()
