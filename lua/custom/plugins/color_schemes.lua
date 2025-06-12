@@ -34,8 +34,8 @@ return {
   --     -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
   --   end,
   -- },
-  { 'ayu-theme/ayu-vim' },
-  -- { 'Shatur/neovim-ayu' },
+  -- { 'ayu-theme/ayu-vim' },
+  { 'Shatur/neovim-ayu' },
   -- { 'HoNamDuong/hybrid.nvim', name = 'hybrid' },
   -- { 'Mofiqul/vscode.nvim' },
   -- { 'dasupradyumna/midnight.nvim' },
@@ -280,4 +280,7 @@ return {
   { 'Everblush/nvim' },
   { 'gmr458/cold.nvim' },
   { 'blazkowolf/gruber-darker.nvim' },
+  -- { 'k4yt3x/ayu-vim-darker' },
+  { 'chama-chomo/grail' },
+  { 'itzalak/thescream.nvim' },
 }
