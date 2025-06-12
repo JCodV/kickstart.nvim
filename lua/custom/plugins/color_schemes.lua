@@ -250,9 +250,9 @@ return {
       local pure_black = '#000000'
       local light_bronze = '#b99468'
 
-      -- vim.g.srcery_bg = { pure_black, 16 }
+      vim.g.srcery_bg = { pure_black, 16 }
       -- vim.g.srcery_bright_white = light_bronze
-      -- vim.cmd.colorscheme 'srcery'
+      vim.cmd.colorscheme 'srcery'
     end,
   },
   -- {
