@@ -36,7 +36,7 @@ return {
   --   end,
   -- },
   -- { 'ayu-theme/ayu-vim' },
-  { 'Shatur/neovim-ayu' },
+  -- { 'Shatur/neovim-ayu' },
   -- { 'HoNamDuong/hybrid.nvim', name = 'hybrid' },
   -- { 'Mofiqul/vscode.nvim' },
   -- { 'dasupradyumna/midnight.nvim' },
@@ -282,8 +282,20 @@ return {
     config = true,
   },
   { 'sainnhe/everforest' },
-  { 'rose-pine/neovim' },
-  { 'cocopon/iceberg.vim' },
+  {
+    'rose-pine/neovim',
+    config = function()
+      require('rose-pine').setup {
+        -- dark_variant = "main",
+        palette = {
+          moon = {
+            base = '#000000',
+          },
+        },
+      }
+    end,
+  },
+  -- { 'cocopon/iceberg.vim' },
   { 'Everblush/nvim' },
   { 'gmr458/cold.nvim' },
   { 'blazkowolf/gruber-darker.nvim' },
