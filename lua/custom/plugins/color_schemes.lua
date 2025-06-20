@@ -6,6 +6,7 @@ return {
       -- vim.cmd.colorscheme 'dragon'
     end,
   },
+  { 'YorickPeterse/Autumn.vim' },
   { 'YorickPeterse/vim-paper' },
   {
     'whizikxd/naysayer-colors.nvim',
@@ -77,7 +78,13 @@ return {
     --   vim.cmd.colorscheme 'tokyonight'
     -- end,
   },
-  { 'metalelf0/jellybeans-nvim' },
+  -- { 'metalelf0/jellybeans-nvim' },
+  {
+    'wtfox/jellybeans.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {}, -- Optional
+  },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
