@@ -6,6 +6,17 @@ return {
       -- vim.cmd.colorscheme 'dragon'
     end,
   },
+  -- {
+  --   'cdmill/neomodern.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('neomodern').setup {
+  --       -- optional configuration here
+  --     }
+  --     require('neomodern').load()
+  --   end,
+  -- },
   { 'YorickPeterse/Autumn.vim' },
   { 'YorickPeterse/vim-paper' },
   {
