@@ -313,4 +313,5 @@ return {
   -- { 'k4yt3x/ayu-vim-darker' },
   { 'chama-chomo/grail' },
   { 'itzalak/thescream.nvim' },
+  { 'mcauley-penney/techbase.nvim' },
 }
