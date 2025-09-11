@@ -35,16 +35,26 @@ return {
       -- vim.cmd.colorscheme 'gruvbox'
     end,
   },
-  -- { 'rebelot/kanagawa.nvim' },
+  {
+    'rebelot/kanagawa.nvim',
+    config = function()
+      require('kanagawa').setup {
+        commentStyle = {
+          italic = false,
+        },
+        theme = 'dragon',
+      }
+    end,
+  },
   -- { 'EdenEast/nightfox.nvim' },
   -- {
   --   'fenetikm/falcon',
-  --   config = function()
-  --     vim.g.falcon_background = 0
-  --     vim.g.falcon_inactive = 0
-  --     -- vim.cmd.colorscheme 'falcon'
-  --     -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
-  --   end,
+  --   -- config = function()
+  --   --   vim.g.falcon_background = 0
+  --   --   vim.g.falcon_inactive = 0
+  --   --   -- vim.cmd.colorscheme 'falcon'
+  --   --   -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
+  --   -- end,
   -- },
   -- { 'ayu-theme/ayu-vim' },
   -- { 'Shatur/neovim-ayu' },
@@ -118,7 +128,11 @@ return {
       vim.g.gruvbox_material_background = 'hard'
       vim.g.gruvbox_material_enable_italic = false
       vim.g.gruvbox_material_colors_override = {
-        bg0 = { '#111111', '234' },
+        -- bg0 = { '#111111', '234' },
+        bg0 = { '#000000', '0' },
+        bg1 = { '#000000', '0' },
+        bg2 = { '#000000', '0' },
+        bg3 = { '#000000', '0' },
       }
       -- vim.g.gruvbox_material_enable_bold = 1
       -- vim.cmd.colorscheme 'gruvbox-material'
@@ -279,39 +293,75 @@ return {
   --     'tjdevries/colorbuddy.nvim',
   --   },
   -- },
+  -- {
+  --   'kaiuri/nvim-juliana',
+  --   lazy = false,
+  --   opts = {
+  --     colors = {
+  --       bg0 = '#111111',
+  --       bg1 = '#111111',
+  --       bg2 = '#111111',
+  --       bg3 = '#111111',
+  --     },
+  --   },
+  --   config = true,
+  -- },
+  -- {
+  --   'sainnhe/everforest',
+  --   config = function()
+  --     vim.g.everforest_enable_italic = false
+  --     vim.g.everforest_enable_italic_comment = false
+  --     vim.g.everforest_colors_override = {
+  --       bg0 = { '#000000', '0' },
+  --       bg1 = { '#000000', '0' },
+  --       bg2 = { '#000000', '0' },
+  --       bg3 = { '#000000', '0' },
+  --     }
+  --   end,
+  -- },
+  -- {
+  --   'rose-pine/neovim',
+  --   config = function()
+  --     require('rose-pine').setup {
+  --       styles = {
+  --         italic = false,
+  --       },
+  --       dark_variant = 'main',
+  --       palette = {
+  --         main = {
+  --           bg0 = { '#000000', '0' },
+  --           bg1 = { '#000000', '0' },
+  --           bg2 = { '#000000', '0' },
+  --           bg3 = { '#000000', '0' },
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
+  -- { 'cocopon/iceberg.vim' },
+  { 'Everblush/nvim' },
+  -- { 'gmr458/cold.nvim' },
+  { 'blazkowolf/gruber-darker.nvim' },
+  -- { 'k4yt3x/ayu-vim-darker' },
   {
-    'kaiuri/nvim-juliana',
-    lazy = false,
-    opts = {
-      colors = {
-        bg0 = '#111111',
-        bg1 = '#111111',
-        bg2 = '#111111',
-        bg3 = '#111111',
-      },
-    },
-    config = true,
-  },
-  { 'sainnhe/everforest' },
-  {
-    'rose-pine/neovim',
+    'chama-chomo/grail',
     config = function()
-      require('rose-pine').setup {
-        -- dark_variant = "main",
-        palette = {
-          moon = {
-            base = '#000000',
-          },
-        },
+      require('grail').setup {
+        italics = false,
+        disable_italic_comments = true,
+        background = 'hard',
       }
     end,
   },
-  -- { 'cocopon/iceberg.vim' },
-  { 'Everblush/nvim' },
-  { 'gmr458/cold.nvim' },
-  { 'blazkowolf/gruber-darker.nvim' },
-  -- { 'k4yt3x/ayu-vim-darker' },
-  { 'chama-chomo/grail' },
-  { 'itzalak/thescream.nvim' },
+  -- {
+  --   'itzalak/thescream.nvim',
+  --   -- config = function()
+  --   --   require('thescream').setup {
+  --   --     palette = {
+  --   --       color05 = '#000000',
+  --   --     },
+  --   --   }
+  --   -- end,
+  -- },
   { 'mcauley-penney/techbase.nvim' },
 }
