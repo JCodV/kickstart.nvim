@@ -364,4 +364,26 @@ return {
   --   -- end,
   -- },
   { 'mcauley-penney/techbase.nvim' },
+  {
+    'ray-x/starry.nvim',
+    config = function()
+      require('starry').setup {
+        config = {
+          style = {
+            name = 'emerald',
+          },
+        },
+      }
+    end,
+  },
+  {
+    'cdmill/neomodern.nvim',
+    config = function()
+      require('neomodern').setup {
+        theme = 'gyokuro',
+      }
+    end,
+  },
+  { 'SomeCoder99/darkslate.nvim' },
+  { 'cooper-anderson/glowbeam.nvim' },
 }
