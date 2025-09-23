@@ -588,7 +588,10 @@ require('lazy').setup({
       if vim.fn.has 'win32' == 1 then
         gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
       end
-      require('lspconfig').gdscript.setup(gdscript_config)
+      vim.lsp.config('gdscript', {
+        gdscript_config,
+      })
+      -- require('lspconfig').gdscript.setup(gdscript_config)
 
       -- OLD GODOT LSP SETUP
       -- require('lspconfig')['gdscript'].setup {
@@ -650,9 +653,9 @@ require('lazy').setup({
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
+      -- vim.list_extend(ensure_installed, {
+      --   'stylua', -- Used to format Lua code
+      -- })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
@@ -664,46 +667,52 @@ require('lazy').setup({
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            if server_name == 'rust_analyzer' then
-              require('lspconfig')['rust_analyzer'].setup {
-                capabilities = capabilities,
-                cmd = { 'rust_analyzer' },
-              }
-            end
+            -- if server_name == 'rust_analyzer' then
+            --   vim.lsp.config('rust_analyzer', {
+            --     capabilities = capabilities,
+            --     cmd = { 'rust_analyzer' },
+            --   })
+            --   -- require('lspconfig')['rust_analyzer'].setup {
+            --   --   capabilities = capabilities,
+            --   --   cmd = { 'rust_analyzer' },
+            --   -- }
+            -- end
 
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config(server_name, server)
+            vim.lsp.enable(server_name)
+            -- require('lspconfig')[server_name].setup(server)
           end,
         },
       }
     end,
   },
 
-  -- Setup for mason-lspconfig
-  -- require('mason-lspconfig').setup {
-  --   -- Add any specific handlers or custom logic
-  --   handlers = {
-  --     function(server_name)
-  --       local server = servers[server_name] or {}
-  --       -- Overriding server configuration as needed
-  --       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+  -- vim.api.nvim_create_autocmd('LspAttach', {
+  --   callback = function(ev)
+  --     local opts = { buffer = ev.buf }
   --
-  --       -- Add manual configuration for zls
-  --       if server_name == "zls" then
-  --         -- Customize the configuration if needed
-  --         require('lspconfig')[server_name].setup({
-  --           cmd = { "zls/src/zls.zig" }, -- Specify the correct path if needed
-  --           filetypes = { "zig" },    -- Set filetypes for zig
-  --           root_dir = require('lspconfig').util.root_pattern('build.zig', '.git'),
-  --         })
-  --       else
-  --         -- Use the default handler for other servers
-  --         require('lspconfig')[server_name].setup(server)
-  --       end
-  --     end,
-  --   },
-  -- }
-
+  --     -- Standard LSP keymaps
+  --     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  --     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  --     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  --     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+  --
+  --     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  --     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+  --     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+  --
+  --     -- Symbol navigation
+  --     vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts)
+  --     vim.keymap.set('n', '<leader>ds', vim.lsp.buf.document_symbol, opts)
+  --
+  --     -- Diagnostics
+  --     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+  --     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  --     vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+  --     vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+  --   end,
+  -- }),
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
