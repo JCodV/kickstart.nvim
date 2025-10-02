@@ -17,7 +17,7 @@ return {
   --     require('neomodern').load()
   --   end,
   -- },
-  { 'YorickPeterse/Autumn.vim' },
+  -- { 'YorickPeterse/Autumn.vim' },
   { 'YorickPeterse/vim-paper' },
   {
     'whizikxd/naysayer-colors.nvim',
@@ -361,26 +361,45 @@ return {
   --   -- end,
   -- },
   { 'mcauley-penney/techbase.nvim' },
+  -- {
+  --   'ray-x/starry.nvim',
+  --   config = function()
+  --     require('starry').setup {
+  --       config = {
+  --         style = {
+  --           name = 'emerald',
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
+  -- {
+  --   'cdmill/neomodern.nvim',
+  --   config = function()
+  --     require('neomodern').setup {
+  --       theme = 'gyokuro',
+  --     }
+  --   end,
+  -- },
   {
-    'ray-x/starry.nvim',
+    'SomeCoder99/darkslate.nvim',
     config = function()
-      require('starry').setup {
-        config = {
-          style = {
-            name = 'emerald',
-          },
-        },
+      require('darkslate').setup {
+        -- hl = {
+        --   Normal = { '#000000', '0' },
+        -- },
       }
     end,
   },
-  {
-    'cdmill/neomodern.nvim',
-    config = function()
-      require('neomodern').setup {
-        theme = 'gyokuro',
-      }
-    end,
-  },
-  { 'SomeCoder99/darkslate.nvim' },
-  { 'cooper-anderson/glowbeam.nvim' },
+  { 'neozenith/estilo-xoria256' },
+  { 'sam4llis/nvim-tundra' },
+  { 'titembaatar/sarnai.nvim' },
+  -- { 'ngscheurich/gloam-vim' },
+  { 'szorfein/fantasy.vim' },
+  { 'loshjawrence/magicka.vim' },
+  { 'barlog-m/oceanic-primal-vim' },
+  { 'balanceiskey/vim-framer-syntax' },
+  { 'haze/ambrosia.vim' },
+  { 'vv9k/bogster' },
+  -- {''},
 }
