@@ -680,8 +680,9 @@ require('lazy').setup({
             -- end
 
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            vim.lsp.config(server_name, server)
-            vim.lsp.enable(server_name)
+            require('lspconfig')[server_name].setup(server)
+            -- vim.lsp.config(server_name, server)
+            -- vim.lsp.enable(server_name)
             -- require('lspconfig')[server_name].setup(server)
           end,
         },
@@ -818,7 +819,7 @@ require('lazy').setup({
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         -- preset = 'default',
-        preset = 'none',
+        preset = 'default',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
