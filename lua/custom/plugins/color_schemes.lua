@@ -23,18 +23,18 @@ return {
     'whizikxd/naysayer-colors.nvim',
     lazy = false,
   },
-  {
-    'ellisonleao/gruvbox.nvim',
-    config = function()
-      require('gruvbox').setup {
-        overrides = {
-          Normal = { bg = '#111111' },
-        },
-      }
-
-      -- vim.cmd.colorscheme 'gruvbox'
-    end,
-  },
+  -- {
+  --   'ellisonleao/gruvbox.nvim',
+  --   config = function()
+  --     require('gruvbox').setup {
+  --       overrides = {
+  --         Normal = { bg = '#111111' },
+  --       },
+  --     }
+  --
+  --     -- vim.cmd.colorscheme 'gruvbox'
+  --   end,
+  -- },
   {
     'rebelot/kanagawa.nvim',
     config = function()
@@ -135,7 +135,7 @@ return {
         bg3 = { '#000000', '0' },
       }
       -- vim.g.gruvbox_material_enable_bold = 1
-      -- vim.cmd.colorscheme 'gruvbox-material'
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -161,7 +161,7 @@ return {
   --   priority = 1000,
   -- },
   -- { 'metalelf0/base16-black-metal-scheme' },
-  -- { 'lifepillar/vim-gruvbox8' },
+  { 'lifepillar/vim-gruvbox8' },
   -- { 'VonHeikemen/rubber-themes.vim' },
   -- { 'felipeagc/fleet-theme-nvim' },
   {
@@ -279,7 +279,7 @@ return {
   {
     'JCodV/srcery-vim',
     config = function()
-      vim.cmd.colorscheme 'srcery'
+      -- vim.cmd.colorscheme 'srcery'
       -- local light_bronze = '#b99468'
       -- vim.g.srcery_bright_white = light_bronze
     end,
