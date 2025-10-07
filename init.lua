@@ -134,6 +134,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
+-- if gdproject then
+--   io.close(gdproject)
+--   vim.fn.serverstart './godothost'
+-- end
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -581,16 +587,30 @@ require('lazy').setup({
       -- require('lspconfig').gdscript.setup(capabilities)
 
       -- GODOT LSP SETUP
-      local gdscript_config = {
+
+      -- gdscript_config['cmd'] = { 'ncat', '127.0.0.01', '6005' }
+
+      -- if vim.fn.has 'win32' == 1 then
+      --   gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
+      -- end
+
+      vim.lsp.config.gdscript = {
+        name = 'godot',
         capabilities = capabilities,
         settings = {},
+        cmd = {
+          'ncat',
+          'localhost',
+          -- '127.0.0.1',
+          '6005',
+        },
+        filetypes = { 'gd' },
+        root_markers = { '.godot', 'project.godot' },
       }
-      if vim.fn.has 'win32' == 1 then
-        gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
-      end
-      vim.lsp.config('gdscript', {
-        gdscript_config,
-      })
+      vim.lsp.enable 'gdscript'
+
+      -- require('lspconfig')['gdscript'].setup(gdscript_config)
+
       -- require('lspconfig').gdscript.setup(gdscript_config)
 
       -- OLD GODOT LSP SETUP
@@ -610,7 +630,6 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
-        glslls = {},
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
@@ -908,7 +927,22 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'gdscript',
+        'godot_resource',
+        'gdshader',
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
