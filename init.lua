@@ -584,40 +584,26 @@ require('lazy').setup({
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      -- require('lspconfig').gdscript.setup(capabilities)
-
       -- GODOT LSP SETUP
-
-      -- gdscript_config['cmd'] = { 'ncat', '127.0.0.01', '6005' }
-
-      -- if vim.fn.has 'win32' == 1 then
-      --   gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
-      -- end
-
-      vim.lsp.config.gdscript = {
-        name = 'godot',
+      require('lspconfig').gdscript.setup {
         capabilities = capabilities,
-        settings = {},
-        cmd = {
-          'ncat',
-          'localhost',
-          -- '127.0.0.1',
-          '6005',
-        },
-        filetypes = { 'gd' },
-        root_markers = { '.godot', 'project.godot' },
       }
-      vim.lsp.enable 'gdscript'
 
-      -- require('lspconfig')['gdscript'].setup(gdscript_config)
-
-      -- require('lspconfig').gdscript.setup(gdscript_config)
-
-      -- OLD GODOT LSP SETUP
-      -- require('lspconfig')['gdscript'].setup {
+      -- NOTE: not sure why this one didn't work
+      -- vim.lsp.config.gdscript = {
       --   name = 'godot',
-      --   cmd = { 'ncat', '127.0.0.1', '6005' },
+      -- capabilities = capabilities,
+      -- settings = {},
+      --   cmd = {
+      --     'ncat',
+      --     '127.0.0.1',
+      --     -- '127.0.0.1',
+      --     '6005',
+      --   },
+      --   filetypes = { 'gd' },
+      --   root_markers = { '.godot', 'project.godot' },
       -- }
+      -- vim.lsp.enable 'gdscript'
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
