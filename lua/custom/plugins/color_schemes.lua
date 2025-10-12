@@ -290,7 +290,7 @@ return {
   {
     'JCodV/srcery-vim',
     config = function()
-      -- vim.cmd.colorscheme 'srcery'
+      vim.cmd.colorscheme 'srcery'
       -- local light_bronze = '#b99468'
       -- vim.g.srcery_bright_white = light_bronze
     end,
@@ -417,10 +417,10 @@ return {
   -- gruvbox
   {
     'RRethy/base16-nvim',
-    config = function()
-      -- vim.cmd.colorscheme 'base16-darkmoss'
-      vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-    end,
+    -- config = function()
+    -- vim.cmd.colorscheme 'base16-darkmoss'
+    -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
+    -- end,
   },
   -- { 'daschw/leaf.nvim' },
   -- { 'bakageddy/alduin.nvim' },
