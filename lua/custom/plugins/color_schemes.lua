@@ -23,17 +23,11 @@ return {
     'whizikxd/naysayer-colors.nvim',
     lazy = false,
   },
+  {
+    'ellisonleao/gruvbox.nvim',
+  },
   -- {
-  --   'ellisonleao/gruvbox.nvim',
-  --   config = function()
-  --     require('gruvbox').setup {
-  --       overrides = {
-  --         Normal = { bg = '#111111' },
-  --       },
-  --     }
-  --
-  --     -- vim.cmd.colorscheme 'gruvbox'
-  --   end,
+  --   'morhetz/gruvbox',
   -- },
   {
     'rebelot/kanagawa.nvim',
@@ -125,17 +119,17 @@ return {
     lazy = false,
     config = function()
       --   vim.o.background = 'dark'
-      vim.g.gruvbox_material_background = 'hard'
+      -- vim.g.gruvbox_material_background = 'hard'
       vim.g.gruvbox_material_enable_italic = false
       vim.g.gruvbox_material_colors_override = {
         -- bg0 = { '#111111', '234' },
-        bg0 = { '#000000', '0' },
-        bg1 = { '#000000', '0' },
-        bg2 = { '#000000', '0' },
-        bg3 = { '#000000', '0' },
+        --   bg0 = { '#000000', '0' },
+        --   bg1 = { '#000000', '0' },
+        --   bg2 = { '#000000', '0' },
+        --   bg3 = { '#000000', '0' },
       }
       -- vim.g.gruvbox_material_enable_bold = 1
-      vim.cmd.colorscheme 'gruvbox-material'
+      -- vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -161,7 +155,6 @@ return {
   --   priority = 1000,
   -- },
   -- { 'metalelf0/base16-black-metal-scheme' },
-  { 'lifepillar/vim-gruvbox8' },
   -- { 'VonHeikemen/rubber-themes.vim' },
   -- { 'felipeagc/fleet-theme-nvim' },
   {
@@ -268,13 +261,16 @@ return {
     'metalelf0/black-metal-theme-neovim',
     lazy = false,
     priority = 1000,
-    -- config = function()
-    --   vim.cmd.colorscheme 'windir'
-    -- require('black-metal').setup {
-    -- optional configuration here
-    -- }
-    -- require('black-metal').load()
-    -- end,
+    config = function()
+      require('black-metal').setup {
+        alt_bg = true,
+      }
+      --   vim.cmd.colorscheme 'windir'
+      -- require('black-metal').setup {
+      -- optional configuration here
+      -- }
+      -- require('black-metal').load()
+    end,
   },
   {
     'JCodV/srcery-vim',
@@ -394,12 +390,22 @@ return {
   { 'neozenith/estilo-xoria256' },
   { 'sam4llis/nvim-tundra' },
   { 'titembaatar/sarnai.nvim' },
-  -- { 'ngscheurich/gloam-vim' },
-  { 'szorfein/fantasy.vim' },
-  { 'loshjawrence/magicka.vim' },
   { 'barlog-m/oceanic-primal-vim' },
-  { 'balanceiskey/vim-framer-syntax' },
-  { 'haze/ambrosia.vim' },
   { 'vv9k/bogster' },
+  -- good base16 themes:
+  -- darktooth
+  -- lime
+  -- irblack
+  -- darkmoss
+  -- sandcastle
+  -- equilibrium gray dark
+  {
+    'RRethy/base16-nvim',
+    config = function()
+      vim.cmd.colorscheme 'base16-darkmoss'
+    end,
+  },
+  -- { 'daschw/leaf.nvim' },
+  -- { 'bakageddy/alduin.nvim' },
   -- {''},
 }
