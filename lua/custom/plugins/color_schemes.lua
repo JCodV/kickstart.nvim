@@ -2,6 +2,9 @@ return {
   {
     'JCodV/autumn-night.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
+    -- config = function()
+    --   vim.cmd.colorscheme 'autumn_night'
+    -- end,
   },
   {
     'JCodV/dragon.nvim',
@@ -27,11 +30,19 @@ return {
     'whizikxd/naysayer-colors.nvim',
     lazy = false,
   },
-  {
-    'ellisonleao/gruvbox.nvim',
-  },
+  -- {
+  --   'ellisonleao/gruvbox.nvim',
+  -- config = function ()
+  -- 	require('gruvbox').setup({
+  --
+  -- 	})
+  -- end
+  -- },
   -- {
   --   'morhetz/gruvbox',
+  --   config = function()
+  --     vim.g.gruvbox_contrast_dark = 'hard'
+  --   end,
   -- },
   {
     'rebelot/kanagawa.nvim',
@@ -403,10 +414,12 @@ return {
   -- darkmoss
   -- sandcastle
   -- equilibrium gray dark
+  -- gruvbox
   {
     'RRethy/base16-nvim',
     config = function()
-      vim.cmd.colorscheme 'base16-darkmoss'
+      -- vim.cmd.colorscheme 'base16-darkmoss'
+      vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
     end,
   },
   -- { 'daschw/leaf.nvim' },
