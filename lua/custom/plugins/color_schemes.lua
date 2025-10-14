@@ -289,11 +289,11 @@ return {
   },
   {
     'JCodV/srcery-vim',
-    config = function()
-      vim.cmd.colorscheme 'srcery'
-      -- local light_bronze = '#b99468'
-      -- vim.g.srcery_bright_white = light_bronze
-    end,
+    -- config = function()
+    -- vim.cmd.colorscheme 'srcery'
+    -- local light_bronze = '#b99468'
+    -- vim.g.srcery_bright_white = light_bronze
+    -- end,
   },
   -- {
   --   '2nthony/vitesse.nvim',
@@ -417,12 +417,16 @@ return {
   -- gruvbox
   {
     'RRethy/base16-nvim',
-    -- config = function()
-    -- vim.cmd.colorscheme 'base16-darkmoss'
-    -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-    -- end,
+    config = function()
+      -- vim.cmd.colorscheme 'base16-darkmoss'
+      -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
+      vim.cmd.colorscheme 'base16-everforest-dark-hard'
+    end,
   },
   -- { 'daschw/leaf.nvim' },
   -- { 'bakageddy/alduin.nvim' },
   -- {''},
+  -- { 'datsfilipe/gruvbox.nvim' },
+  { 'rjmacarthy/oscura-vscode.nvim' },
+  -- { 'santhosh-tekuri/silence.nvim' },
 }
