@@ -420,7 +420,7 @@ return {
     config = function()
       -- vim.cmd.colorscheme 'base16-darkmoss'
       -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-      vim.cmd.colorscheme 'base16-everforest-dark-hard'
+      vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
     end,
   },
   -- { 'daschw/leaf.nvim' },
