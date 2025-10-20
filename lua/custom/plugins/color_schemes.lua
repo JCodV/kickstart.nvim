@@ -420,7 +420,8 @@ return {
     config = function()
       -- vim.cmd.colorscheme 'base16-darkmoss'
       -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-      vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
+      -- vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
+      vim.cmd.colorscheme 'base16-kanagawa-dragon'
     end,
   },
   -- { 'daschw/leaf.nvim' },
@@ -429,4 +430,5 @@ return {
   -- { 'datsfilipe/gruvbox.nvim' },
   { 'rjmacarthy/oscura-vscode.nvim' },
   -- { 'santhosh-tekuri/silence.nvim' },
+  { 'alexkotusenko/nightgem.nvim' },
 }
