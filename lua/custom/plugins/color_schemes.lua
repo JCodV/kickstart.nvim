@@ -431,4 +431,16 @@ return {
   { 'rjmacarthy/oscura-vscode.nvim' },
   -- { 'santhosh-tekuri/silence.nvim' },
   { 'alexkotusenko/nightgem.nvim' },
+  { 'xeind/nightingale.nvim' },
+  { 'lucasadelino/conifer.nvim' },
+  { 'drewxs/ash.nvim' },
+  {
+    'timmypidashev/darkbox.nvim',
+    config = function()
+      require('darkbox').setup {
+        contrast = 'retro',
+      }
+    end,
+  },
+  -- { 'scajanus/jbeans', name = 'jbeans' },
 }
