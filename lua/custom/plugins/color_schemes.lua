@@ -33,14 +33,14 @@ return {
     'whizikxd/naysayer-colors.nvim',
     lazy = false,
   },
-  -- {
-  --   'ellisonleao/gruvbox.nvim',
-  -- config = function ()
-  -- 	require('gruvbox').setup({
-  --
-  -- 	})
-  -- end
-  -- },
+  {
+    'ellisonleao/gruvbox.nvim',
+    -- config = function ()
+    -- 	require('gruvbox').setup({
+    --
+    -- 	})
+    -- end
+  },
   -- {
   --   'morhetz/gruvbox',
   --   config = function()
@@ -58,7 +58,7 @@ return {
       }
     end,
   },
-  -- { 'EdenEast/nightfox.nvim' },
+  { 'EdenEast/nightfox.nvim' },
   -- {
   --   'fenetikm/falcon',
   --   -- config = function()
@@ -69,7 +69,7 @@ return {
   --   -- end,
   -- },
   -- { 'ayu-theme/ayu-vim' },
-  -- { 'Shatur/neovim-ayu' },
+  { 'Shatur/neovim-ayu' },
   -- { 'HoNamDuong/hybrid.nvim', name = 'hybrid' },
   -- { 'Mofiqul/vscode.nvim' },
   -- { 'dasupradyumna/midnight.nvim' },
@@ -86,8 +86,10 @@ return {
     'deparr/tairiki.nvim',
     lazy = false,
     config = function()
-      require('tairiki').setup {}
-      -- vim.cmd.colorscheme 'tairiki-dimmed'
+      --   require('tairiki').setup {
+      --
+      -- }
+      vim.cmd.colorscheme 'tairiki-dark'
     end,
   },
   -- {
@@ -102,6 +104,9 @@ return {
     lazy = false,
     priority = 1000,
     opts = {},
+    -- config = function()
+    --   vim.cmd.colorscheme 'flexoki'
+    -- end,
   },
   {
     'folke/tokyonight.nvim',
@@ -111,13 +116,13 @@ return {
     --   vim.cmd.colorscheme 'tokyonight'
     -- end,
   },
-  -- { 'metalelf0/jellybeans-nvim' },
-  {
-    'wtfox/jellybeans.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {}, -- Optional
-  },
+  { 'metalelf0/jellybeans-nvim' },
+  -- {
+  --   'wtfox/jellybeans.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {}, -- Optional
+  -- },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -125,8 +130,7 @@ return {
       require('catppuccin').setup {
         color_overrides = {
           frappe = {
-            -- base = '#111111',
-            base = '#000000',
+            base = '#111111',
           },
         },
       }
@@ -158,13 +162,14 @@ return {
       -- vim.cmd 'highlight Normal guibg=#000000 ctermbg=0'
     end,
   },
-  {
-    'p00f/alabaster.nvim',
-    lazy = false,
-    -- config = function()
-    --   vim.cmd.colorscheme 'alabaster'
-    -- end,
-  },
+  -- {
+  --   'p00f/alabaster.nvim',
+  --   lazy = false,
+  --   -- config = function()
+  --   --   vim.cmd.colorscheme 'alabaster'
+  --   -- end,
+  -- },
+  { 'VonHeikemen/little-wonder' },
   -- {
   --   'mcauley-penney/ice-cave.nvim',
   --   config = function()
@@ -177,9 +182,14 @@ return {
   -- { 'felipeagc/fleet-theme-nvim' },
   {
     'idr4n/github-monochrome.nvim',
-    config = function()
-      -- vim.cmd.colorscheme 'github-monochrome-solarized'
-    end,
+    --  config = function()
+    -- require('github-monochrome').setup({
+    -- 	opts = {
+    --
+    -- 	}
+    -- })
+    -- vim.cmd.colorscheme 'github-monochrome-solarized'
+    -- end,
   },
   -- { 'lpuljic/nox-modus.nvim' },
   -- { 'cooperuser/glowbeam.nvim' },
@@ -317,19 +327,19 @@ return {
   --   },
   --   config = true,
   -- },
-  -- {
-  --   'sainnhe/everforest',
-  --   config = function()
-  --     vim.g.everforest_enable_italic = false
-  --     vim.g.everforest_enable_italic_comment = false
-  --     vim.g.everforest_colors_override = {
-  --       bg0 = { '#000000', '0' },
-  --       bg1 = { '#000000', '0' },
-  --       bg2 = { '#000000', '0' },
-  --       bg3 = { '#000000', '0' },
-  --     }
-  --   end,
-  -- },
+  {
+    'sainnhe/everforest',
+    config = function()
+      vim.g.everforest_enable_italic = false
+      vim.g.everforest_enable_italic_comment = false
+      -- vim.g.everforest_colors_override = {
+      --   bg0 = { '#000000', '0' },
+      -- bg1 = { '#000000', '0' },
+      -- bg2 = { '#000000', '0' },
+      -- bg3 = { '#000000', '0' },
+      -- }
+    end,
+  },
   -- {
   --   'rose-pine/neovim',
   --   config = function()
@@ -352,7 +362,7 @@ return {
   -- { 'cocopon/iceberg.vim' },
   { 'Everblush/nvim' },
   -- { 'gmr458/cold.nvim' },
-  { 'blazkowolf/gruber-darker.nvim' },
+  -- { 'blazkowolf/gruber-darker.nvim' },
   -- { 'k4yt3x/ayu-vim-darker' },
   {
     'chama-chomo/grail',
@@ -374,7 +384,7 @@ return {
   --   --   }
   --   -- end,
   -- },
-  { 'mcauley-penney/techbase.nvim' },
+  -- { 'mcauley-penney/techbase.nvim' },
   -- {
   --   'ray-x/starry.nvim',
   --   config = function()
@@ -387,14 +397,14 @@ return {
   --     }
   --   end,
   -- },
-  -- {
-  --   'cdmill/neomodern.nvim',
-  --   config = function()
-  --     require('neomodern').setup {
-  --       theme = 'gyokuro',
-  --     }
-  --   end,
-  -- },
+  {
+    'cdmill/neomodern.nvim',
+    config = function()
+      require('neomodern').setup {
+        theme = 'gyokuro',
+      }
+    end,
+  },
   {
     'SomeCoder99/darkslate.nvim',
     config = function()
@@ -405,11 +415,11 @@ return {
       }
     end,
   },
-  { 'neozenith/estilo-xoria256' },
+  -- { 'neozenith/estilo-xoria256' },
   { 'sam4llis/nvim-tundra' },
-  { 'titembaatar/sarnai.nvim' },
-  { 'barlog-m/oceanic-primal-vim' },
-  { 'vv9k/bogster' },
+  -- { 'titembaatar/sarnai.nvim' },
+  -- { 'barlog-m/oceanic-primal-vim' },
+  -- { 'vv9k/bogster' },
   -- good base16 themes:
   -- darktooth
   -- lime
@@ -418,15 +428,15 @@ return {
   -- sandcastle
   -- equilibrium gray dark
   -- gruvbox
-  {
-    'RRethy/base16-nvim',
-    config = function()
-      -- vim.cmd.colorscheme 'base16-darkmoss'
-      -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-      -- vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
-      vim.cmd.colorscheme 'base16-kanagawa-dragon'
-    end,
-  },
+  -- {
+  --   'RRethy/base16-nvim',
+  --   config = function()
+  --     -- vim.cmd.colorscheme 'base16-darkmoss'
+  --     -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
+  --     -- vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
+  --     vim.cmd.colorscheme 'base16-kanagawa-dragon'
+  --   end,
+  -- },
   -- { 'daschw/leaf.nvim' },
   -- { 'bakageddy/alduin.nvim' },
   -- {''},
@@ -436,7 +446,7 @@ return {
   { 'alexkotusenko/nightgem.nvim' },
   { 'xeind/nightingale.nvim' },
   { 'lucasadelino/conifer.nvim' },
-  { 'drewxs/ash.nvim' },
+  -- { 'drewxs/ash.nvim' },
   {
     'timmypidashev/darkbox.nvim',
     config = function()
