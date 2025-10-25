@@ -1,5 +1,8 @@
 return {
   {
+    'JCodV/serspace',
+  },
+  {
     'JCodV/autumn-night.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
     -- config = function()
