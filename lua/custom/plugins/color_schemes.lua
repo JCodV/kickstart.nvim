@@ -416,7 +416,6 @@ return {
     end,
   },
   -- { 'neozenith/estilo-xoria256' },
-  { 'sam4llis/nvim-tundra' },
   -- { 'titembaatar/sarnai.nvim' },
   -- { 'barlog-m/oceanic-primal-vim' },
   -- { 'vv9k/bogster' },
@@ -446,14 +445,10 @@ return {
   { 'alexkotusenko/nightgem.nvim' },
   { 'xeind/nightingale.nvim' },
   { 'lucasadelino/conifer.nvim' },
-  -- { 'drewxs/ash.nvim' },
-  {
-    'timmypidashev/darkbox.nvim',
-    config = function()
-      require('darkbox').setup {
-        contrast = 'retro',
-      }
-    end,
-  },
-  -- { 'scajanus/jbeans', name = 'jbeans' },
+  { 'bluz71/vim-moonfly-colors' },
+  { 'Sly-Harvey/radium.nvim' },
+  { 'Prince-Ramani/crush.nvim' },
+  -- { 's1dsq/alabaster_dark.nvim' },
+  -- { 'mdouglasbrett/alabaster-mod.nvim' },
+  { 'p00f/alabaster.nvim' },
 }
