@@ -327,7 +327,7 @@ require('lazy').setup({
         --
         defaults = {
           layout_strategy = 'vertical',
-          layout_config = { height = 0.7, width = 0.3 },
+          -- layout_config = { height = 0.7, width = 0.3 },
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           -- },
