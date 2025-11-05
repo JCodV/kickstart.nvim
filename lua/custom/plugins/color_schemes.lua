@@ -450,5 +450,5 @@ return {
   { 'Prince-Ramani/crush.nvim' },
   -- { 's1dsq/alabaster_dark.nvim' },
   -- { 'mdouglasbrett/alabaster-mod.nvim' },
-  { 'p00f/alabaster.nvim' },
+  { 'oonamo/ef-themes.nvim' },
 }
