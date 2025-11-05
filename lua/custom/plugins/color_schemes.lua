@@ -1,6 +1,9 @@
 return {
   {
-    'JCodV/serspace',
+    'JCodV/twilight.nvim',
+    config = function()
+      vim.cmd.colorscheme 'twilight'
+    end,
   },
   {
     'JCodV/autumn-night.nvim',
@@ -89,7 +92,7 @@ return {
       --   require('tairiki').setup {
       --
       -- }
-      vim.cmd.colorscheme 'tairiki-dark'
+      -- vim.cmd.colorscheme 'tairiki-dark'
     end,
   },
   -- {
