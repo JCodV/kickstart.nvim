@@ -584,26 +584,14 @@ require('lazy').setup({
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      -- GODOT LSP SETUP
+      -- godot lsp
       require('lspconfig').gdscript.setup {
         capabilities = capabilities,
       }
 
-      -- NOTE: not sure why this one didn't work
-      -- vim.lsp.config.gdscript = {
-      --   name = 'godot',
-      -- capabilities = capabilities,
-      -- settings = {},
-      --   cmd = {
-      --     'ncat',
-      --     '127.0.0.1',
-      --     -- '127.0.0.1',
-      --     '6005',
-      --   },
-      --   filetypes = { 'gd' },
-      --   root_markers = { '.godot', 'project.godot' },
-      -- }
-      -- vim.lsp.enable 'gdscript'
+      -- system installed lsps
+      require('lspconfig').clangd.setup {}
+      require('lspconfig').rust_analyzer.setup {}
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -615,10 +603,10 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {},
+        -- rust_analyzer = {},
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
