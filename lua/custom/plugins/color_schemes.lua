@@ -1,9 +1,9 @@
 return {
   {
     'JCodV/twilight.nvim',
-    config = function()
-      vim.cmd.colorscheme 'twilight'
-    end,
+    -- config = function()
+    --   vim.cmd.colorscheme 'twilight'
+    -- end,
   },
   {
     'JCodV/autumn-night.nvim',
@@ -16,7 +16,7 @@ return {
     'JCodV/dragon.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
     config = function()
-      -- vim.cmd.colorscheme 'dragon'
+      vim.cmd.colorscheme 'dragon'
     end,
   },
   -- {
