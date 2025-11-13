@@ -145,14 +145,14 @@ return {
     config = function()
       --   vim.o.background = 'dark'
       -- vim.g.gruvbox_material_background = 'hard'
-      vim.g.gruvbox_material_enable_italic = false
-      vim.g.gruvbox_material_colors_override = {
-        -- bg0 = { '#111111', '234' },
-        bg0 = { '#000000', '234' },
-        --   bg1 = { '#000000', '0' },
-        --   bg2 = { '#000000', '0' },
-        --   bg3 = { '#000000', '0' },
-      }
+      -- vim.g.gruvbox_material_enable_italic = false
+      -- vim.g.gruvbox_material_colors_override = {
+      --   -- bg0 = { '#111111', '234' },
+      --   bg0 = { '#000000', '234' },
+      --   --   bg1 = { '#000000', '0' },
+      --   --   bg2 = { '#000000', '0' },
+      --   --   bg3 = { '#000000', '0' },
+      -- }
       -- vim.g.gruvbox_material_enable_bold = 1
       -- vim.cmd.colorscheme 'gruvbox-material'
     end,
@@ -330,19 +330,24 @@ return {
   --   },
   --   config = true,
   -- },
-  {
-    'sainnhe/everforest',
-    config = function()
-      vim.g.everforest_enable_italic = false
-      vim.g.everforest_enable_italic_comment = false
-      -- vim.g.everforest_colors_override = {
-      --   bg0 = { '#000000', '0' },
-      -- bg1 = { '#000000', '0' },
-      -- bg2 = { '#000000', '0' },
-      -- bg3 = { '#000000', '0' },
-      -- }
-    end,
-  },
+  -- {
+  --   'neanias/everforest-nvim',
+  --   -- 'sainnhe/everforest',
+  --   config = function()
+  --     -- vim.g.everforest_enable_italic = false
+  --     -- vim.g.everforest_enable_italic_comment = false
+  --     require('everforest').setup {
+  --       background = 'dark',
+  --     }
+  --     -- vim.g.everforest_background = 'hard'
+  --     -- vim.g.everforest_colors_override = {
+  --     --   bg0 = { '#000000', '0' },
+  --     -- bg1 = { '#000000', '0' },
+  --     -- bg2 = { '#000000', '0' },
+  --     -- bg3 = { '#000000', '0' },
+  --     -- }
+  --   end,
+  -- },
   -- {
   --   'rose-pine/neovim',
   --   config = function()
@@ -454,4 +459,30 @@ return {
   -- { 's1dsq/alabaster_dark.nvim' },
   -- { 'mdouglasbrett/alabaster-mod.nvim' },
   { 'oonamo/ef-themes.nvim' },
+  {
+    'guillermodotn/nvim-earthsong',
+    name = 'earthsong',
+    -- config = function()
+    --     vim.cmd("colorscheme earthsong")
+    -- end
+  },
+  {
+    'saran13raj/wheat-fox.nvim',
+    priority = 1000,
+    -- config = function()
+    --   require('wheat-fox').setup()
+    --   vim.cmd.colorscheme('wheat-fox')
+    -- end,
+  },
+  {
+    'tomstolarczuk/rider.nvim',
+    -- config = function()
+    --     require("rider").setup()
+    --     vim.cmd("colorscheme rider")
+    -- end,
+  },
+  {
+    'utakotoba/myrrh.nvim',
+  },
+  { 'ptdewey/vitesse-nvim' },
 }
