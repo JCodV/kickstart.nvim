@@ -144,7 +144,7 @@ return {
     lazy = false,
     config = function()
       --   vim.o.background = 'dark'
-      -- vim.g.gruvbox_material_background = 'hard'
+      vim.g.gruvbox_material_background = 'hard'
       -- vim.g.gruvbox_material_enable_italic = false
       -- vim.g.gruvbox_material_colors_override = {
       --   -- bg0 = { '#111111', '234' },
