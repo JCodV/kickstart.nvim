@@ -36,20 +36,20 @@ return {
     'whizikxd/naysayer-colors.nvim',
     lazy = false,
   },
-  {
-    'ellisonleao/gruvbox.nvim',
-    -- config = function ()
-    -- 	require('gruvbox').setup({
-    --
-    -- 	})
-    -- end
-  },
   -- {
-  --   'morhetz/gruvbox',
-  --   config = function()
-  --     vim.g.gruvbox_contrast_dark = 'hard'
-  --   end,
+  --   'ellisonleao/gruvbox.nvim',
+  --   -- config = function ()
+  --   -- 	require('gruvbox').setup({
+  --   --
+  --   -- 	})
+  --   -- end
   -- },
+  {
+    'morhetz/gruvbox',
+    config = function()
+      -- vim.g.gruvbox_contrast_dark = 'hard'
+    end,
+  },
   {
     'rebelot/kanagawa.nvim',
     config = function()
@@ -74,7 +74,7 @@ return {
   -- { 'ayu-theme/ayu-vim' },
   { 'Shatur/neovim-ayu' },
   -- { 'HoNamDuong/hybrid.nvim', name = 'hybrid' },
-  -- { 'Mofiqul/vscode.nvim' },
+  { 'Mofiqul/vscode.nvim' },
   -- { 'dasupradyumna/midnight.nvim' },
   {
     'zenbones-theme/zenbones.nvim',
@@ -172,7 +172,7 @@ return {
   --   --   vim.cmd.colorscheme 'alabaster'
   --   -- end,
   -- },
-  { 'VonHeikemen/little-wonder' },
+  -- { 'VonHeikemen/little-wonder' },
   -- {
   --   'mcauley-penney/ice-cave.nvim',
   --   config = function()
@@ -277,9 +277,9 @@ return {
   --   end,
   -- },
   -- { 'w0ng/vim-hybrid' },
-  {
-    'JCodV/joko',
-  },
+  -- {
+  --   'JCodV/joko',
+  -- },
   {
     'webhooked/kanso.nvim',
     lazy = false,
@@ -305,6 +305,7 @@ return {
   },
   {
     'JCodV/srcery-vim',
+    -- 'srcery-colors/srcery-vim',
     -- config = function()
     -- vim.cmd.colorscheme 'srcery'
     -- local light_bronze = '#b99468'
@@ -413,16 +414,16 @@ return {
       }
     end,
   },
-  {
-    'SomeCoder99/darkslate.nvim',
-    config = function()
-      require('darkslate').setup {
-        -- hl = {
-        --   Normal = { '#000000', '0' },
-        -- },
-      }
-    end,
-  },
+  -- {
+  --   'SomeCoder99/darkslate.nvim',
+  --   config = function()
+  --     require('darkslate').setup {
+  --       -- hl = {
+  --       --   Normal = { '#000000', '0' },
+  --       -- },
+  --     }
+  --   end,
+  -- },
   -- { 'neozenith/estilo-xoria256' },
   -- { 'titembaatar/sarnai.nvim' },
   -- { 'barlog-m/oceanic-primal-vim' },
@@ -435,27 +436,27 @@ return {
   -- sandcastle
   -- equilibrium gray dark
   -- gruvbox
-  -- {
-  --   'RRethy/base16-nvim',
-  --   config = function()
-  --     -- vim.cmd.colorscheme 'base16-darkmoss'
-  --     -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-  --     -- vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
-  --     vim.cmd.colorscheme 'base16-kanagawa-dragon'
-  --   end,
-  -- },
+  {
+    'RRethy/base16-nvim',
+    -- config = function()
+    --   -- vim.cmd.colorscheme 'base16-darkmoss'
+    --   -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
+    --   -- vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
+    --   vim.cmd.colorscheme 'base16-kanagawa-dragon'
+    -- end,
+  },
   -- { 'daschw/leaf.nvim' },
   -- { 'bakageddy/alduin.nvim' },
   -- {''},
   -- { 'datsfilipe/gruvbox.nvim' },
-  { 'rjmacarthy/oscura-vscode.nvim' },
+  -- { 'rjmacarthy/oscura-vscode.nvim' },
   -- { 'santhosh-tekuri/silence.nvim' },
-  { 'alexkotusenko/nightgem.nvim' },
-  { 'xeind/nightingale.nvim' },
+  -- { 'alexkotusenko/nightgem.nvim' },
+  -- { 'xeind/nightingale.nvim' },
   { 'lucasadelino/conifer.nvim' },
   { 'bluz71/vim-moonfly-colors' },
-  { 'Sly-Harvey/radium.nvim' },
-  { 'Prince-Ramani/crush.nvim' },
+  -- { 'Sly-Harvey/radium.nvim' },
+  -- { 'Prince-Ramani/crush.nvim' },
   -- { 's1dsq/alabaster_dark.nvim' },
   -- { 'mdouglasbrett/alabaster-mod.nvim' },
   { 'oonamo/ef-themes.nvim' },
@@ -474,13 +475,13 @@ return {
     --   vim.cmd.colorscheme('wheat-fox')
     -- end,
   },
-  {
-    'tomstolarczuk/rider.nvim',
-    -- config = function()
-    --     require("rider").setup()
-    --     vim.cmd("colorscheme rider")
-    -- end,
-  },
+  -- {
+  --   'tomstolarczuk/rider.nvim',
+  --   -- config = function()
+  --   --     require("rider").setup()
+  --   --     vim.cmd("colorscheme rider")
+  --   -- end,
+  -- },
   {
     'utakotoba/myrrh.nvim',
   },
