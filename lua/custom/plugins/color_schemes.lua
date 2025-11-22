@@ -15,9 +15,9 @@ return {
   {
     'JCodV/dragon.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
-    config = function()
-      vim.cmd.colorscheme 'dragon'
-    end,
+    -- config = function()
+    --   vim.cmd.colorscheme 'dragon'
+    -- end,
   },
   -- {
   --   'cdmill/neomodern.nvim',
@@ -485,5 +485,18 @@ return {
   {
     'utakotoba/myrrh.nvim',
   },
-  { 'ptdewey/vitesse-nvim' },
+  {
+    'ptdewey/vitesse-nvim',
+    config = function()
+      vim.cmd.colorscheme 'vitesse'
+    end,
+  },
+  {
+    'abhilash26/mapledark.nvim',
+    -- lazy = false,
+    -- priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme('mapledark')
+    -- end,
+  },
 }

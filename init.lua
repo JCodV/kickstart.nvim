@@ -585,13 +585,18 @@ require('lazy').setup({
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       -- godot lsp
-      require('lspconfig').gdscript.setup {
-        capabilities = capabilities,
-      }
+      -- require('lspconfig').gdscript.setup {
+      --   capabilities = capabilities,
+      -- }
 
       -- system installed lsps
-      require('lspconfig').clangd.setup {}
-      require('lspconfig').rust_analyzer.setup {}
+      -- require('lspconfig').clangd.setup {}
+      -- require('lspconfig').rust_analyzer.setup {}
+
+      vim.lsp.enable 'rust_analyzer'
+      vim.lsp.enable 'clangd'
+      vim.lsp.enable 'gdscript'
+      -- vim.lsp.config('gdscript')
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
