@@ -44,12 +44,12 @@ return {
   --   -- 	})
   --   -- end
   -- },
-  {
-    'morhetz/gruvbox',
-    config = function()
-      -- vim.g.gruvbox_contrast_dark = 'hard'
-    end,
-  },
+  -- {
+  --   'morhetz/gruvbox',
+  --   config = function()
+  --     -- vim.g.gruvbox_contrast_dark = 'hard'
+  --   end,
+  -- },
   {
     'rebelot/kanagawa.nvim',
     config = function()
@@ -144,15 +144,15 @@ return {
     lazy = false,
     config = function()
       --   vim.o.background = 'dark'
-      vim.g.gruvbox_material_background = 'hard'
+      -- vim.g.gruvbox_material_background = 'hard'
       -- vim.g.gruvbox_material_enable_italic = false
-      -- vim.g.gruvbox_material_colors_override = {
-      --   -- bg0 = { '#111111', '234' },
-      --   bg0 = { '#000000', '234' },
-      --   --   bg1 = { '#000000', '0' },
-      --   --   bg2 = { '#000000', '0' },
-      --   --   bg3 = { '#000000', '0' },
-      -- }
+      vim.g.gruvbox_material_colors_override = {
+        bg0 = { '#111111', '234' },
+        --   bg0 = { '#000000', '234' },
+        --   --   bg1 = { '#000000', '0' },
+        --   --   bg2 = { '#000000', '0' },
+        --   --   bg3 = { '#000000', '0' },
+      }
       -- vim.g.gruvbox_material_enable_bold = 1
       -- vim.cmd.colorscheme 'gruvbox-material'
     end,
@@ -166,60 +166,23 @@ return {
     end,
   },
   -- {
-  --   'p00f/alabaster.nvim',
-  --   lazy = false,
-  --   -- config = function()
-  --   --   vim.cmd.colorscheme 'alabaster'
+  --   'idr4n/github-monochrome.nvim',
+  --   --  config = function()
+  --   -- require('github-monochrome').setup({
+  --   -- 	opts = {
+  --   --
+  --   -- 	}
+  --   -- })
+  --   -- vim.cmd.colorscheme 'github-monochrome-solarized'
   --   -- end,
   -- },
-  -- { 'VonHeikemen/little-wonder' },
+  -- { 'jameswalls/naysayer.nvim' },
   -- {
-  --   'mcauley-penney/ice-cave.nvim',
+  --   'ferdinandrau/carbide.nvim',
   --   config = function()
-  --     -- vim.cmd.colorscheme 'ice-cave'
+  --     -- vim.cmd.colorscheme 'carbide'
   --   end,
-  --   priority = 1000,
   -- },
-  -- { 'metalelf0/base16-black-metal-scheme' },
-  -- { 'VonHeikemen/rubber-themes.vim' },
-  -- { 'felipeagc/fleet-theme-nvim' },
-  {
-    'idr4n/github-monochrome.nvim',
-    --  config = function()
-    -- require('github-monochrome').setup({
-    -- 	opts = {
-    --
-    -- 	}
-    -- })
-    -- vim.cmd.colorscheme 'github-monochrome-solarized'
-    -- end,
-  },
-  -- { 'lpuljic/nox-modus.nvim' },
-  -- { 'cooperuser/glowbeam.nvim' },
-  -- {
-  --   'ramojus/mellifluous.nvim',
-  -- },
-  -- {
-  --   'CosecSecCot/midnight-desert.nvim',
-  --   dependencies = {
-  --     'rktjmp/lush.nvim',
-  --   },
-  -- },
-  -- {
-  --   'p0209p/naysayer.vim',
-  --   priority = 1000,
-  --   lazy = false,
-  -- },
-  { 'jameswalls/naysayer.nvim' },
-  -- { 'oni0002/neg.vim' },
-  -- { 'shawnohare/hadalized.nvim' },
-  -- { 'pustota-theme/pustota.nvim' },
-  {
-    'ferdinandrau/carbide.nvim',
-    config = function()
-      -- vim.cmd.colorscheme 'carbide'
-    end,
-  },
   -- { 'Oniup/ignite.nvim' },
 
   -- {
@@ -280,29 +243,29 @@ return {
   -- {
   --   'JCodV/joko',
   -- },
-  {
-    'webhooked/kanso.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme 'kanso-zen'
-    end,
-  },
-  {
-    'metalelf0/black-metal-theme-neovim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('black-metal').setup {
-        alt_bg = true,
-      }
-      --   vim.cmd.colorscheme 'windir'
-      -- require('black-metal').setup {
-      -- optional configuration here
-      -- }
-      -- require('black-metal').load()
-    end,
-  },
+  -- {
+  --   'webhooked/kanso.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- vim.cmd.colorscheme 'kanso-zen'
+  --   end,
+  -- },
+  -- {
+  --   'metalelf0/black-metal-theme-neovim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('black-metal').setup {
+  --       alt_bg = true,
+  --     }
+  --     --   vim.cmd.colorscheme 'windir'
+  --     -- require('black-metal').setup {
+  --     -- optional configuration here
+  --     -- }
+  --     -- require('black-metal').load()
+  --   end,
+  -- },
   {
     'JCodV/srcery-vim',
     -- 'srcery-colors/srcery-vim',
@@ -460,13 +423,13 @@ return {
   -- { 's1dsq/alabaster_dark.nvim' },
   -- { 'mdouglasbrett/alabaster-mod.nvim' },
   { 'oonamo/ef-themes.nvim' },
-  {
-    'guillermodotn/nvim-earthsong',
-    name = 'earthsong',
-    -- config = function()
-    --     vim.cmd("colorscheme earthsong")
-    -- end
-  },
+  -- {
+  --   'guillermodotn/nvim-earthsong',
+  --   name = 'earthsong',
+  --   -- config = function()
+  --   --     vim.cmd("colorscheme earthsong")
+  --   -- end
+  -- },
   {
     'saran13raj/wheat-fox.nvim',
     priority = 1000,
@@ -491,12 +454,15 @@ return {
       vim.cmd.colorscheme 'vitesse'
     end,
   },
+  -- {
+  --   'abhilash26/mapledark.nvim',
+  --   -- lazy = false,
+  --   -- priority = 1000,
+  --   -- config = function()
+  --   --   vim.cmd.colorscheme('mapledark')
+  --   -- end,
+  -- },
   {
-    'abhilash26/mapledark.nvim',
-    -- lazy = false,
-    -- priority = 1000,
-    -- config = function()
-    --   vim.cmd.colorscheme('mapledark')
-    -- end,
+    'adibhanna/yukinord.nvim',
   },
 }
