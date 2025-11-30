@@ -85,13 +85,28 @@ return {
     --   vim.cmd.colorscheme 'zenbones'
     -- end,
   },
+
   {
     'deparr/tairiki.nvim',
     lazy = false,
     config = function()
-      --   require('tairiki').setup {
+      require('tairiki').setup {
+        colors = function(c, opts)
+          c.bright_orange = '#ff8800' -- define a new color
+          c.green = '#00ffaa' -- redefine an existing color
+          c.yellow_white = '#' -- (this is incomplete but syntactically fine)
+          c.black = '#000000'
+
+          -- if opts.palette == "light" then
+          --   c.blue = require("tairiki.util").darken(c.blue, 0.9)
+          -- end
+        end,
+
+        highlights = function(hl, c, opts)
+          hl.Normal = { bg = c.black }
+        end,
+      }
       --
-      -- }
       -- vim.cmd.colorscheme 'tairiki-dark'
     end,
   },
@@ -154,7 +169,7 @@ return {
         --   --   bg3 = { '#000000', '0' },
       }
       -- vim.g.gruvbox_material_enable_bold = 1
-      -- vim.cmd.colorscheme 'gruvbox-material'
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -451,7 +466,7 @@ return {
   {
     'ptdewey/vitesse-nvim',
     config = function()
-      vim.cmd.colorscheme 'vitesse'
+      -- vim.cmd.colorscheme 'vitesse'
     end,
   },
   -- {
@@ -462,7 +477,12 @@ return {
   --   --   vim.cmd.colorscheme('mapledark')
   --   -- end,
   -- },
+  -- {
+  --   'adibhanna/yukinord.nvim',
+  -- },
   {
-    'adibhanna/yukinord.nvim',
+    'nendix/zen.nvim',
+    lazy = false,
+    priority = 1000,
   },
 }
