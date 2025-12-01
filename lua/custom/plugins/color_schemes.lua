@@ -485,4 +485,10 @@ return {
     lazy = false,
     priority = 1000,
   },
+  {
+    'barrett-ruth/midnight.nvim',
+    -- config = function()
+    --   vim.cmd.colorscheme('midnight')
+    -- end,
+  },
 }
