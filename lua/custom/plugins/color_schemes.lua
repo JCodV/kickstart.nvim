@@ -19,6 +19,13 @@ return {
     --   vim.cmd.colorscheme 'dragon'
     -- end,
   },
+  {
+    'JCodV/vedra.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+    -- config = function()
+    --   vim.cmd.colorscheme 'dragon'
+    -- end,
+  },
   -- {
   --   'cdmill/neomodern.nvim',
   --   lazy = false,
@@ -36,20 +43,25 @@ return {
     'whizikxd/naysayer-colors.nvim',
     lazy = false,
   },
-  -- {
-  --   'ellisonleao/gruvbox.nvim',
-  --   -- config = function ()
-  --   -- 	require('gruvbox').setup({
-  --   --
-  --   -- 	})
-  --   -- end
-  -- },
+  {
+    'ellisonleao/gruvbox.nvim',
+    config = function()
+      require('gruvbox').setup {
+        bold = false,
+        contrast = 'hard',
+        palette_overrides = {
+          -- light0 = ''
+        },
+      }
+    end,
+  },
   -- {
   --   'morhetz/gruvbox',
-  --   config = function()
-  --     -- vim.g.gruvbox_contrast_dark = 'hard'
-  --   end,
+  --   -- config = function()
+  --   -- vim.g.gruvbox_contrast_dark = 'hard'
+  --   -- end,
   -- },
+  -- { 'luisiacc/gruvbox-baby' },
   {
     'rebelot/kanagawa.nvim',
     config = function()
@@ -92,9 +104,9 @@ return {
     config = function()
       require('tairiki').setup {
         colors = function(c, opts)
-          c.bright_orange = '#ff8800' -- define a new color
-          c.green = '#00ffaa' -- redefine an existing color
-          c.yellow_white = '#' -- (this is incomplete but syntactically fine)
+          -- c.bright_orange = '#ff8800' -- define a new color
+          -- c.green = '#00ffaa' -- redefine an existing color
+          -- c.yellow_white = '#' -- (this is incomplete but syntactically fine)
           c.black = '#000000'
 
           -- if opts.palette == "light" then
@@ -134,13 +146,13 @@ return {
     --   vim.cmd.colorscheme 'tokyonight'
     -- end,
   },
-  { 'metalelf0/jellybeans-nvim' },
-  -- {
-  --   'wtfox/jellybeans.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {}, -- Optional
-  -- },
+  -- { 'metalelf0/jellybeans-nvim' },
+  {
+    'wtfox/jellybeans.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {}, -- Optional
+  },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -237,7 +249,7 @@ return {
   --     -- vim.cmd.colorscheme 'new-dawn-fades'
   --   end,
   -- },
-  -- { 'wesgibbs/vim-irblack' },
+  { 'wesgibbs/vim-irblack' },
   -- { 'michaeljsmith/vim-colours-dark-lord' },
   -- { 'itspriddle/vim-themes' },
   -- { 'trapd00r/neverland-vim-theme' },
@@ -371,7 +383,7 @@ return {
   --   --   }
   --   -- end,
   -- },
-  -- { 'mcauley-penney/techbase.nvim' },
+  { 'mcauley-penney/techbase.nvim' },
   -- {
   --   'ray-x/starry.nvim',
   --   config = function()
@@ -414,15 +426,15 @@ return {
   -- sandcastle
   -- equilibrium gray dark
   -- gruvbox
-  {
-    'RRethy/base16-nvim',
-    -- config = function()
-    --   -- vim.cmd.colorscheme 'base16-darkmoss'
-    --   -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-    --   -- vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
-    --   vim.cmd.colorscheme 'base16-kanagawa-dragon'
-    -- end,
-  },
+  -- {
+  --   'RRethy/base16-nvim',
+  --   -- config = function()
+  --   --   -- vim.cmd.colorscheme 'base16-darkmoss'
+  --   --   -- vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
+  --   --   -- vim.cmd.colorscheme 'base16-gruvbox-dark-pale'
+  --   --   vim.cmd.colorscheme 'base16-kanagawa-dragon'
+  --   -- end,
+  -- },
   -- { 'daschw/leaf.nvim' },
   -- { 'bakageddy/alduin.nvim' },
   -- {''},
@@ -460,9 +472,9 @@ return {
   --   --     vim.cmd("colorscheme rider")
   --   -- end,
   -- },
-  {
-    'utakotoba/myrrh.nvim',
-  },
+  -- {
+  --   'utakotoba/myrrh.nvim',
+  -- },
   {
     'ptdewey/vitesse-nvim',
     config = function()
@@ -489,6 +501,16 @@ return {
     'barrett-ruth/midnight.nvim',
     -- config = function()
     --   vim.cmd.colorscheme('midnight')
+    -- end,
+  },
+  {
+    'shadowy-pycoder/vscode-gruber.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+    name = 'vscode-gruber',
+    branch = 'main',
+    priority = 1000,
+    -- config = function()
+    --   vim.cmd('colorscheme vscode-gruber')
     -- end,
   },
 }
