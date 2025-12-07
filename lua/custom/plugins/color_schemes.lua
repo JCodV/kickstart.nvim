@@ -107,7 +107,7 @@ return {
           -- c.bright_orange = '#ff8800' -- define a new color
           -- c.green = '#00ffaa' -- redefine an existing color
           -- c.yellow_white = '#' -- (this is incomplete but syntactically fine)
-          c.black = '#000000'
+          -- c.black = '#000000'
 
           -- if opts.palette == "light" then
           --   c.blue = require("tairiki.util").darken(c.blue, 0.9)
@@ -249,7 +249,7 @@ return {
   --     -- vim.cmd.colorscheme 'new-dawn-fades'
   --   end,
   -- },
-  { 'wesgibbs/vim-irblack' },
+  -- { 'wesgibbs/vim-irblack' },
   -- { 'michaeljsmith/vim-colours-dark-lord' },
   -- { 'itspriddle/vim-themes' },
   -- { 'trapd00r/neverland-vim-theme' },
@@ -321,9 +321,9 @@ return {
   --   },
   --   config = true,
   -- },
+  --
   -- {
   --   'neanias/everforest-nvim',
-  --   -- 'sainnhe/everforest',
   --   config = function()
   --     -- vim.g.everforest_enable_italic = false
   --     -- vim.g.everforest_enable_italic_comment = false
@@ -492,11 +492,11 @@ return {
   -- {
   --   'adibhanna/yukinord.nvim',
   -- },
-  {
-    'nendix/zen.nvim',
-    lazy = false,
-    priority = 1000,
-  },
+  -- {
+  --   'nendix/zen.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   {
     'barrett-ruth/midnight.nvim',
     -- config = function()
@@ -513,4 +513,15 @@ return {
     --   vim.cmd('colorscheme vscode-gruber')
     -- end,
   },
+  { 'sainnhe/everforest' },
+  -- { 'uhs-robert/oasis.nvim' },
+  -- {
+  --   'bjarneo/aether.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     require('aether').setup()
+  --     vim.cmd.colorscheme 'aether'
+  --   end,
+  -- },
+  -- { 'binbandit/aetherglow.nvim' },
 }
