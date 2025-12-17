@@ -294,8 +294,8 @@ return {
   --   end,
   -- },
   {
-    'JCodV/srcery-vim',
-    -- 'srcery-colors/srcery-vim',
+    -- 'JCodV/srcery-vim',
+    'srcery-colors/srcery-vim',
     -- config = function()
     -- vim.cmd.colorscheme 'srcery'
     -- local light_bronze = '#b99468'
@@ -524,4 +524,12 @@ return {
   --   end,
   -- },
   -- { 'binbandit/aetherglow.nvim' },
+  --
+  {
+    'craftzdog/solarized-osaka.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  { 'sderev/alabaster.vim' },
 }
