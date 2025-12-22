@@ -181,7 +181,7 @@ return {
         --   --   bg3 = { '#000000', '0' },
       }
       -- vim.g.gruvbox_material_enable_bold = 1
-      vim.cmd.colorscheme 'gruvbox-material'
+      -- vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -294,13 +294,13 @@ return {
   --   end,
   -- },
   {
-    -- 'JCodV/srcery-vim',
-    'srcery-colors/srcery-vim',
-    -- config = function()
-    -- vim.cmd.colorscheme 'srcery'
-    -- local light_bronze = '#b99468'
-    -- vim.g.srcery_bright_white = light_bronze
-    -- end,
+    'JCodV/srcery-vim',
+    -- 'srcery-colors/srcery-vim',
+    config = function()
+      vim.cmd.colorscheme 'srcery'
+      -- local light_bronze = '#b99468'
+      -- vim.g.srcery_bright_white = light_bronze
+    end,
   },
   -- {
   --   '2nthony/vitesse.nvim',
@@ -532,4 +532,6 @@ return {
     opts = {},
   },
   { 'sderev/alabaster.vim' },
+  { 'tobi-wan-kenobi/zengarden' },
+  { 'rafikdraoui/couleurs.vim' },
 }
